@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-02T09:47:36.000Z</updated>
+  <updated>2020-05-02T10:27:40.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>&#39;my-first-blog&#39;</title>
+    <link href="http://yoursite.com/2020/05/02/my-first-blog/"/>
+    <id>http://yoursite.com/2020/05/02/my-first-blog/</id>
+    <published>2020-05-02T10:24:37.000Z</published>
+    <updated>2020-05-02T10:27:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><h2 id="图形学"><a href="#图形学" class="headerlink" title="图形学"></a>图形学</h2><ul><li><h4 id="书"><a href="#书" class="headerlink" title="书"></a>书</h4><ul><li><strong>1. Fundamental of Computer Graphic</strong>  ：<em>图形学入门</em></li><li><strong>2. OpenGL Programming Guide</strong>  ： <em>OpenGL红宝书</em></li><li><strong>3. Real-Time Rendering</strong>  ：<em>渲染大全</em></li></ul></li><li><h4 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h4><ul><li><strong>1. 光栅化渲染器</strong>  ： <em>简单实现</em></li><li><strong>2. 简单渲染引擎开发</strong> ：<em>结合渲染器 math相关 等</em></li></ul></li></ul></li><li><h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2><ul><li><h4 id="书-1"><a href="#书-1" class="headerlink" title="书"></a>书</h4><ul><li><strong>1. C++ Primer Plus</strong></li><li><strong>2. STL源码分析</strong></li></ul></li><li><h4 id="开发-1"><a href="#开发-1" class="headerlink" title="开发"></a>开发</h4><ul><li><strong>1. STL部分复现</strong></li><li><strong>2. 算法题目复健</strong> </li></ul></li></ul></li><li><h2 id="引擎使用"><a href="#引擎使用" class="headerlink" title="引擎使用"></a>引擎使用</h2><ul><li><h4 id="Godot"><a href="#Godot" class="headerlink" title="Godot"></a>Godot</h4><ul><li><strong>开源代码结构分析</strong></li><li><strong>简单游戏开发</strong></li></ul></li><li><h4 id="U3D"><a href="#U3D" class="headerlink" title="U3D"></a>U3D</h4><ul><li><strong>坑</strong></li></ul></li></ul></li><li><h2 id="引擎开发"><a href="#引擎开发" class="headerlink" title="引擎开发"></a>引擎开发</h2><ul><li><h4 id="书-2"><a href="#书-2" class="headerlink" title="书"></a>书</h4><ul><li><strong>游戏引擎架构</strong></li></ul></li><li><h4 id="开发-2"><a href="#开发-2" class="headerlink" title="开发"></a>开发</h4><ul><li><strong>简单物理引擎（坑）</strong></li></ul></li></ul></li></ul><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul><li><h3 id="C-1"><a href="#C-1" class="headerlink" title="C#"></a>C#</h3></li><li><h3 id="DSL"><a href="#DSL" class="headerlink" title="DSL"></a>DSL</h3></li><li><h3 id="…"><a href="#…" class="headerlink" title="…"></a>…</h3></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;&lt;h2 id=&quot;图形学&quot;&gt;&lt;a href=&quot;#图形学&quot; class=&quot;headerlink&quot; title=&quot;图形学&quot;&gt;&lt;/a&gt;图形学&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;书&quot;&gt;&lt;a href=&quot;#书&quot; class=&quot;headerlink&quot; title=&quot;书
+      
+    
+    </summary>
+    
+    
+    
+      <category term="图形学" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
+    
+      <category term="引擎开发" scheme="http://yoursite.com/tags/%E5%BC%95%E6%93%8E%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
