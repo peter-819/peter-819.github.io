@@ -85,14 +85,11 @@
         
         <div class="navbar-menu navbar-start">
             
-            <a class="navbar-item "
-               href="/about">关于</a>
+            <a class="navbar-item is-active"
+               href="/Development">开发</a>
             
             <a class="navbar-item "
                href="/internship">实习</a>
-            
-            <a class="navbar-item is-active"
-               href="/Development">开发</a>
             
             <a class="navbar-item "
                href="/Nothing">琐事</a>
@@ -149,24 +146,28 @@
 </article>
 
 
-<div class="sharebox">
-    
-<div class="notification is-danger">
-    You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.
-</div>
-
-</div>
-
 
 
 <div class="comments">
     <h3 class="title is-4">Comments</h3>
     
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/Development/index.html';
+        this.page.identifier = 'Development/index.html';
+        
+        this.language = 'en';
+        
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'peter' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
 <div id="disqus_thread">
-    
-    <div class="notification is-danger">
-        You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.
-    </div>
     
     <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
 </div>
