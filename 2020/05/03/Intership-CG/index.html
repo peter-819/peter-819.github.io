@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+<title>图形学面试知识点 - Jerome&#39;s Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
+
+
+
+
+<meta name="description" content="WHU sutdent, Computer Graphic, Game Engine">
+
+
+
+
+
+    <meta name="description" content="&amp;#x56FE;&amp;#x5F62;&amp;#x5B66;&amp;#x9762;&amp;#x8BD5;&amp;#x77E5;&amp;#x8BC6;&amp;#x70B9;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图形学面试知识点">
+<meta property="og:url" content="http://yoursite.com/2020/05/03/Intership-CG/index.html">
+<meta property="og:site_name" content="Jerome&#39;s Blog">
+<meta property="og:description" content="&amp;#x56FE;&amp;#x5F62;&amp;#x5B66;&amp;#x9762;&amp;#x8BD5;&amp;#x77E5;&amp;#x8BC6;&amp;#x70B9;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200403225544466.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BldGVyXzgxOQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200403230216801.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BldGVyXzgxOQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200403232038382.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BldGVyXzgxOQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200403233531999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BldGVyXzgxOQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200414140849897.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BldGVyXzgxOQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200414141149976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BldGVyXzgxOQ==,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2020-05-03T06:42:40.000Z">
+<meta property="article:modified_time" content="2020-05-03T06:44:08.000Z">
+<meta property="article:author" content="Jerome">
+<meta property="article:tag" content="图形学">
+<meta property="article:tag" content="面试知识点">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200403225544466.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BldGVyXzgxOQ==,size_16,color_FFFFFF,t_70">
+
+
+
+
+
+<link rel="icon" href="/images/logo.png">
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ovo|Source+Code+Pro">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Jerome's Blog" type="application/atom+xml">
+</head>
+<body>
+    
+<nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item navbar-logo" href="/">
+                
+                    
+                    Jerome&#39;s Blog
+                    
+                
+            </a>
+            <div class="navbar-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="navbar-menu navbar-start">
+            
+            <a class="navbar-item "
+               href="/archives">档案</a>
+            
+            <a class="navbar-item "
+               href="/categories/Internship">实习</a>
+            
+            <a class="navbar-item "
+               href="/categories/Development">开发</a>
+            
+            <a class="navbar-item "
+               href="/categories/Nothing">琐事</a>
+            
+            <a class="navbar-item "
+               href="/categories/JEngine">JEngine</a>
+            
+            <a class="navbar-item "
+               href="/about">关于</a>
+            
+        </div>
+        
+        <div class="navbar-menu navbar-end">
+            
+            <a class="navbar-item search" title="搜索" href="javascript:;">
+                <i class="fas fa-search"></i>
+            </a>
+            
+            
+            
+            <a class="navbar-item" title="GitHub" href="https://github.com/peter-819" target="_blank" rel="noopener">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+               
+            
+        </div>
+    </div>
+</nav>
+
+    <section class="section">
+    <div class="container">
+    <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            图形学面试知识点
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2020-05-03T06:42:40.000Z" itemprop="datePublished">5月 3 2020</time>
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/Internship/">Internship</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            8 分钟 读完 (约 1165 字)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><p>&#x56FE;&#x5F62;&#x5B66;&#x9762;&#x8BD5;&#x77E5;&#x8BC6;&#x70B9;</p>
+<a id="more"></a>
+
+<h1 id="&#x56FE;&#x5F62;&#x5B66;"><a href="#&#x56FE;&#x5F62;&#x5B66;" class="headerlink" title="&#x56FE;&#x5F62;&#x5B66;"></a>&#x56FE;&#x5F62;&#x5B66;</h1><ul>
+<li><p><strong>&#x6E32;&#x67D3;&#x7BA1;&#x7EBF;</strong><br>&#x9876;&#x70B9;&#x6570;&#x636E;&#x8F93;&#x5165; (Vertices)<br>&#x9876;&#x70B9;&#x7740;&#x8272;&#x5668; (Vertex Shader)<br>&#x66F2;&#x9762;&#x7EC6;&#x5206;&#x7740;&#x8272;&#x5668;  (Tessellation Shader)<br>&#x51E0;&#x4F55;&#x7740;&#x8272;&#x5668; (Geometry Shader)<br>&#x56FE;&#x5143;&#x88C5;&#x914D; (Primitive Setup)<br>&#x88C1;&#x526A;&#x5254;&#x9664; (Culling and Clipping)<br>&#x5C4F;&#x5E55;&#x6620;&#x5C04; (Screen Mapping)<br>&#x5149;&#x6805;&#x5316; (Rasterization)<br>&#x7247;&#x6BB5;&#x7740;&#x8272;&#x5668; (Fragment Shader)<br>&#x6DF7;&#x5408;&#x6D4B;&#x8BD5; (Blending and Testing)<br><img src="https://img-blog.csdnimg.cn/20200403225544466.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BldGVyXzgxOQ==,size_16,color_FFFFFF,t_70" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></p>
+</li>
+<li><p>&#x9876;&#x70B9;&#x6570;&#x636E;<br>&#x9876;&#x70B9;&#x5750;&#x6807;&#xFF0C;&#x9876;&#x70B9;&#x7EB9;&#x7406;&#xFF0C;&#x9876;&#x70B9;&#x6CD5;&#x7EBF;&#xFF0C;&#x9876;&#x70B9;&#x989C;&#x8272;&#x7B49;<br>&#x9876;&#x70B9;&#x7F13;&#x5B58;(Vertex Buffer)&#xFF0C;&#x7D22;&#x5F15;&#x7F13;&#x5B58; (Index Buffer)</p>
+</li>
+<li><p>&#x9876;&#x70B9;&#x7740;&#x8272;&#x5668;<br>&#x8F93;&#x5165;&#x9876;&#x70B9;&#x6570;&#x636E;</p>
+<ul>
+<li>&#x5750;&#x6807;&#x53D8;&#x6362;&#xFF1A;(*&#x4E3A;&#x9876;&#x70B9;&#x7740;&#x8272;&#x5668;&#x4E2D;)</li>
+</ul>
+</li>
+</ul>
+<p><strong>&#x5C40;&#x90E8;&#x5750;&#x6807; (Local Coor)</strong><br>|   <em>&#x6A21;&#x578B;&#x77E9;&#x9635; Model</em> *<br><strong>&#x4E16;&#x754C;&#x5750;&#x6807; (World Coor)</strong><br>|  <em>&#x89C2;&#x5BDF;&#x77E9;&#x9635;View</em>  *<br><strong>&#x89C2;&#x5BDF;&#x5750;&#x6807; (View Coor)</strong><br>|  <em>&#x6295;&#x5F71;&#x77E9;&#x9635;Projection</em>  *<br><strong>&#x88C1;&#x526A;&#x5750;&#x6807; (Clip Coor)</strong><br>| <em>&#x900F;&#x89C6;&#x9664;&#x6CD5;</em><br><strong>&#x6807;&#x51C6;&#x8BBE;&#x5907;&#x7A7A;&#x95F4; NDC (Normalized Device Coor)</strong><br>|  <em>&#x89C6;&#x53E3;&#x53D8;&#x6362;</em><br><strong>&#x7A97;&#x53E3;&#x5750;&#x6807;</strong><img src="https://img-blog.csdnimg.cn/20200403230216801.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BldGVyXzgxOQ==,size_16,color_FFFFFF,t_70" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"><br>    + <strong>&#x6CD5;&#x7EBF;&#x53D8;&#x6362;</strong><br>        * &#x5E73;&#x79FB;&#x4E0D;&#x53D8;&#xFF0C;&#x65CB;&#x8F6C;&#x4E58;&#x6E32;&#x67D3;&#x77E9;&#x9635;&#xFF0C;<strong><em>&#x975E;&#x5747;&#x5300;&#x7F29;&#x653E;</em> &#xFF08;&#x77E9;&#x9635;&#x9006;&#x53D8;&#x6362;&#xFF09;</strong><br>    + <strong>&#x6295;&#x5F71;</strong><br>        * &#x900F;&#x89C6;&#x6295;&#x5F71; (Projective Projection) : &#x89C6;&#x9525;&#x4F53; (Frustum): znear,zfar,&#x89C6;&#x89D2;FOV(Field of View),&#x5C4F;&#x5E55;&#x7EB5;&#x6A2A;&#x6BD4;(Aspect Ratio)<br>        * &#x6B63;&#x4EA4;&#x6295;&#x5F71; (Orthographic Projection) : &#x6B63;&#x65B9;&#x4F53;<br>    + <strong>&#x7740;&#x8272;</strong><br>        * &#x5E73;&#x9762;&#x7740;&#x8272; (Flat Shading) : &#x4E09;&#x89D2;&#x5F62;&#x7B2C;&#x4E00;&#x4E2A;&#x70B9;&#x6807;&#x8BC6;&#x989C;&#x8272;<br>        * &#x9AD8;&#x6D1B;&#x5FB7;&#x7740;&#x8272; (Gouraud Shader) : &#x9876;&#x70B9;&#x7740;&#x8272;&#x5668;&#x4E2D;&#x8BA1;&#x7B97;&#x9876;&#x70B9;&#x989C;&#x8272;&#xFF0C;&#x5149;&#x6805;&#x5316;&#x63D2;&#x503C;&#x989C;&#x8272;<br>        * &#x51AF;&#x6C0F;&#x7740;&#x8272; (Phong Shading) : &#x5149;&#x6805;&#x5316;&#x63D2;&#x503C;&#x6CD5;&#x7EBF;&#xFF0C;&#x7247;&#x5143;&#x7740;&#x8272;&#x5668;&#x4E2D;&#x8BA1;&#x7B97;&#x989C;&#x8272;</p>
+<ul>
+<li><p><strong>&#x66F2;&#x9762;&#x7EC6;&#x5206;&#x7740;&#x8272;&#x5668; (Tessellation Shader)</strong></p>
+</li>
+<li><p><strong>&#x51E0;&#x4F55;&#x7740;&#x8272;&#x5668; (Geometry Shader)</strong></p>
+</li>
+<li><p><strong>&#x56FE;&#x5143;&#x88C5;&#x914D;</strong><br>  &#x5411;&#x9876;&#x70B9;&#x88C5;&#x5165;DrawCall&#x6307;&#x5B9A;&#x7684;&#x56FE;&#x5143;</p>
+</li>
+<li><p><strong>&#x88C1;&#x526A;</strong><img src="https://img-blog.csdnimg.cn/20200403232038382.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BldGVyXzgxOQ==,size_16,color_FFFFFF,t_70" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></p>
+</li>
+<li><p><strong>&#x80CC;&#x9762;&#x5254;&#x9664;</strong><br>&#x5220;&#x9664;&#x80CC;&#x5BF9;&#x6444;&#x50CF;&#x673A;&#x7684;&#x56FE;&#x5143;&#xFF0C;&#x6CD5;&#x5411;&#x91CF;&#x5224;&#x65AD;&#xFF0C;&#x4E09;&#x70B9;&#x987A;&#x65F6;&#x9488;&#x5254;&#x9664;&#xFF0C;&#x9006;&#x65F6;&#x9488;&#x4FDD;&#x7559;&#xFF08;&#x53F3;&#x624B;&#x5B9A;&#x5219;&#xFF09;<br>&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x5254;&#x9664;&#x65B9;&#x5411;back/front</p>
+</li>
+<li><p><strong>&#x5C4F;&#x5E55;&#x6620;&#x5C04; (Screen Mapping)</strong></p>
+<ul>
+<li>&#x900F;&#x89C6;&#x9664;&#x6CD5;&#xFF1A;&#x70B9;&#x5750;&#x6807;&#x4E3A;&#x9F50;&#x6B21;&#x5750;&#x6807;&#xFF0C;&#x7ECF;&#x8FC7;&#x900F;&#x89C6;&#x77E9;&#x9635;&#x53D8;&#x6362;&#x540E;w&#x503C;&#x4E0D;&#x4E3A;1&#xFF0C;&#x5C06;xyz&#x9664;&#x4EE5;w&#x4EE5;&#x8FBE;&#x5230;&#x8FD1;&#x5927;&#x8FDC;&#x5C0F;</li>
+<li>&#x89C6;&#x53E3;&#x53D8;&#x6362;&#xFF1A;&#x5C06;NDC&#x5750;&#x6807;&#x8F6C;&#x6362;&#x4E3A;&#x7A97;&#x53E3;&#x5750;&#x6807;&#xFF0C;&#x5C06;z&#x5750;&#x6807;&#x6620;&#x5C04;&#x5230;[-1,1]&#xFF08;OpenGL&#xFF09;&#xFF0C; glViewport() &#x8BBE;&#x5B9A;&#x89C6;&#x53E3;&#x5750;&#x6807;&amp;&#x5BBD;&#x9AD8;</li>
+</ul>
+</li>
+<li><p><strong>&#x62FE;&#x53D6;</strong></p>
+</li>
+<li><p><strong>&#x5149;&#x6805;&#x5316;</strong></p>
+<ul>
+<li>&#x7EBF;&#x6BB5;&#x5149;&#x6805;&#x5316;&#xFF1A;<ul>
+<li>&#x6570;&#x5B57;&#x5FAE;&#x5206;&#x753B;&#x7EBF; DDA(Digital Differential Analyzer) : &#x53D6;&#x589E;&#x91CF;x&#x5224;&#x65AD;y&#xFF0C;&#x6709;&#x6D6E;&#x70B9;&#x8FD0;&#x7B97;</li>
+<li>Bresenham &#xFF1A;&#x6CA1;&#x6709;&#x6D6E;&#x70B9;&#x6570;&#x8FD0;&#x7B97;&#xFF0C;d = &#x394;x(b-a) &#x5224;&#x65AD;d<br><img src="https://img-blog.csdnimg.cn/20200403233531999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BldGVyXzgxOQ==,size_16,color_FFFFFF,t_70" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>&#x7247;&#x6BB5;&#x7740;&#x8272;&#x5668; (Fragment Shader)</strong></p>
+<ul>
+<li>&#x5149;&#x7167;&#x6A21;&#x578B;<ul>
+<li>Phong : &#x8BA1;&#x7B97;&#x9AD8;&#x5149;&#xFF1A;&#x5149;&#x6E90;&#x5411;&#x91CF;&#x5173;&#x4E8E;&#x6CD5;&#x7EBF;&#x53CD;&#x5C04;&#x5411;&#x91CF;&#x8BA1;&#x7B97;&#xFF08;&#x4E0D;&#x8FDE;&#x7EED;&#xFF0C;&#x5927;&#x4E8E;90&#x5EA6;&#x4E3A;&#x8D1F;&#xFF09;</li>
+<li>Blinn-Phone&#xFF1A;&#x8BA1;&#x7B97;&#x9AD8;&#x5149;&#xFF1A;&#x5149;&#x6E90;&#x5411;&#x91CF;+&#x89C6;&#x89D2;&#x5411;&#x91CF;&#x8BA1;&#x7B97; &#xFF08;&#x8FDE;&#x7EED;&#xFF09;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>&#x7EB9;&#x7406;</strong></p>
+<ul>
+<li>&#x6CD5;&#x7EBF;&#x8D34;&#x56FE;</li>
+</ul>
+</li>
+<li><p><strong>&#x952F;&#x9F7F;&#x548C;&#x6297;&#x952F;&#x9F7F; (Aliasing and Anti-aliasing)</strong></p>
+</li>
+<li><p><strong>&#x9634;&#x5F71;</strong></p>
+<ul>
+<li>&#x9634;&#x5F71;&#x8D34;&#x56FE;</li>
+</ul>
+</li>
+<li><p><strong>&#x6D4B;&#x8BD5;</strong></p>
+<ul>
+<li>&#x88C1;&#x5207;&#x6D4B;&#x8BD5;</li>
+<li>Alpha&#x6D4B;&#x8BD5;</li>
+<li>&#x6DF1;&#x5EA6;&#x6D4B;&#x8BD5;</li>
+<li>&#x6A21;&#x677F;&#x6D4B;&#x8BD5;</li>
+</ul>
+</li>
+<li><p><strong>&#x6DF7;&#x5408;</strong></p>
+<ul>
+<li>Alpha&#x6DF7;&#x5408;</li>
+</ul>
+</li>
+<li><p><strong>&#x573A;&#x666F;&#x7BA1;&#x7406;</strong></p>
+<ul>
+<li>BSP&#x6811;</li>
+<li>&#x56DB;&#x53C9;&#x6811;&#x516B;&#x53C9;&#x6811;</li>
+<li>k-d&#x6811;</li>
+</ul>
+</li>
+<li><p><strong>&#x5EF6;&#x8FDF;&#x6E32;&#x67D3; &#x524D;&#x5411;&#x6E32;&#x67D3; (defer / forward)</strong></p>
+<ul>
+<li>&#x5EF6;&#x8FDF;&#x6E32;&#x67D3;&#x4F18;&#x70B9;&#xFF1A;&#x5BF9;&#x4E8E;&#x591A;&#x5149;&#x6E90;&#x573A;&#x666F;&#x6548;&#x7387;&#x66F4;&#x4F18;</li>
+<li>&#x5EF6;&#x8FDF;&#x6E32;&#x67D3;&#x7F3A;&#x70B9;&#xFF1A;&#x4E0D;&#x80FD;&#x7528;&#x786C;&#x4EF6;&#x6297;&#x952F;&#x9F7F;&#xFF0C;&#x4E0D;&#x80FD;&#x6E32;&#x67D3;&#x900F;&#x660E;&#x4F53;&#xFF0C;GPU&#x5E26;&#x5BBD;&#x5360;&#x7528;&#x9AD8;&#xFF08;&#x624B;&#x6E38;&#x4E0D;&#x5E38;&#x7528;&#xFF09;</li>
+<li>&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#xFF1A;&#x524D;&#x5411;&#x6E32;&#x67D3;&#x4E2D;&#x5149;&#x7167;&#x5728;fragment shader&#x4E2D;&#x8BA1;&#x7B97;&#xFF0C;&#x5EF6;&#x8FDF;&#x6E32;&#x67D3;&#x5C06;&#x5149;&#x7167;&#x53EA;&#x5728;&#x6700;&#x540E;&#x663E;&#x793A;&#x51FA;&#x7684;&#x50CF;&#x7D20;&#x4E0A;&#x8BA1;&#x7B97;&#xFF0C;&#x5C06;&#x539F;&#x6765;&#x8BA1;&#x7B97;&#x5149;&#x7167;&#x7684;&#x6570;&#x636E;&#x5982;&#x6CD5;&#x7EBF;&#xFF0C;&#x989C;&#x8272;&#xFF0C;&#x5750;&#x6807;&#xFF0C;&#x9AD8;&#x5149;&#x7B49;&#x5B58;&#x5165;G-buffer&#xFF0C;&#x5728;&#x8FDB;&#x884C;z-test&#x540E;&#x53E6;&#x884C;&#x6E32;&#x67D3;&#x5149;&#x7167;&#xFF0C;&#x5BF9;&#x6BCF;&#x4E2A;&#x6700;&#x7EC8;&#x663E;&#x793A;&#x7684;&#x50CF;&#x7D20;&#x8BA1;&#x7B97;&#x5149;&#x7167;&#x4FE1;&#x606F;&#x3002;</li>
+<li><a href="https://www.jianshu.com/p/a36ecd4856a9" target="_blank" rel="noopener">OpenGL&#x5B9E;&#x73B0;</a></li>
+</ul>
+</li>
+<li><p><strong>&#x7EB9;&#x7406;</strong></p>
+<ul>
+<li>&#x7EB9;&#x7406;&#x73AF;&#x7ED5;<ul>
+<li>GL_REPEAT &#xFF1A;&#x91CD;&#x590D;</li>
+<li>GL_MIRRORED_REPEAT &#xFF1A;&#x955C;&#x50CF;&#x91CD;&#x590D;</li>
+<li>GL_CLAMP_TO_EDGE &#xFF1A;&#x8FB9;&#x7F18;&#x62C9;&#x4F38;</li>
+<li>GL_CLAMP_TO_BORDER &#xFF1A;&#x8FB9;&#x7F18;&#x6307;&#x5B9A;&#x989C;&#x8272;<br><img src="https://img-blog.csdnimg.cn/20200414140849897.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BldGVyXzgxOQ==,size_16,color_FFFFFF,t_70" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"><ul>
+<li>&#x7EB9;&#x7406;&#x8FC7;&#x6EE4;&#xFF1A;&#x5C06;&#x7EB9;&#x7406;&#x5750;&#x6807;&#x6D6E;&#x70B9;&#x503C;&#x6620;&#x5C04;&#x5230;&#x50CF;&#x7D20;</li>
+</ul>
+<ul>
+<li>GL_NEAREST &#xFF1A;&#x53D6;&#x6700;&#x8FD1;&#x90BB;&#x7684;&#x50CF;&#x7D20;&#x989C;&#x8272;</li>
+<li>GL_LINEAR &#xFF1A;&#x6839;&#x636E;&#x76F8;&#x90BB;&#x50CF;&#x7D20;&#x989C;&#x8272;&#x63D2;&#x503C;<br><img src="https://img-blog.csdnimg.cn/20200414141149976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BldGVyXzgxOQ==,size_16,color_FFFFFF,t_70" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></li>
+</ul>
+<ul>
+<li>MipMap</li>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</body></html>
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/">#图形学</a></span>
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9/">#面试知识点</a></span>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
+            
+            <a href="/2020/05/03/Nothing-2020-4-15/">2020.4.15</a>
+            
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/2020/05/03/Intership-CPP/">C++面试知识点</a>
+            
+        </span>
+    </div>
+    
+</article>
+
+
+
+
+<div class="comments">
+    <h3 class="title is-4">评论</h3>
+    
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2020/05/03/Intership-CG/';
+        this.page.identifier = '2020/05/03/Intership-CG/';
+        
+        this.language = 'zh';
+        
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'peter' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+</div>
+</div>
+
+    </div>
+</section>
+    <footer class="footer">
+    <div class="container">
+        <div class="columns content">
+            <div class="column is-narrow has-text-centered">
+                &copy; 2020 Jerome&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+            </div>
+            <div class="column is-hidden-mobile"></div>
+
+            
+            <div class="column is-narrow">
+                <div class="columns is-mobile is-multiline is-centered">
+                
+                    
+                <a class="column is-narrow has-text-black" title="GitHub" href="https://github.com/peter-819" target="_blank" rel="noopener">
+                    
+                    GitHub
+                    
+                </a>
+                
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+
+<!-- test if the browser is outdated -->
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" target="_blank" rel="noopener">Update my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // plugin function, place inside DOM ready function
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        })
+    });
+</script>
+
+<script>
+    window.FontAwesomeConfig = {
+        searchPseudoElements: true
+    }
+    moment.locale("zh-CN");
+</script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script>
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+</script>
+
+    
+    
+    
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/js/lightgallery-all.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/js/jquery.justifiedGallery.min.js"></script>
+<script>
+    (function ($) {
+        $(document).ready(function () {
+            if (typeof($.fn.lightGallery) === 'function') {
+                $('.article.gallery').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof($.fn.justifiedGallery) === 'function') {
+                $('.justified-gallery').justifiedGallery();
+            }
+        });
+    })(jQuery);
+</script>
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <style>
+        .hljs {
+            position: relative;
+        }
+
+        .hljs .clipboard-btn {
+            float: right;
+            color: #9a9a9a;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hljs .clipboard-btn:hover {
+          color: #8a8a8a;
+        }
+
+        .hljs > .clipboard-btn {
+            display: none;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+        }
+
+        .hljs:hover > .clipboard-btn {
+            display: inline;
+        }
+
+        .hljs > figcaption > .clipboard-btn {
+            margin-right: 4px;
+        }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $('figure.hljs').each(function(i, figure) {
+          var codeId = 'code-' + i;
+          var code = figure.querySelector('.code');
+          var copyButton = $('<button>Copy <i class="far fa-clipboard"></i></button>');
+          code.id = codeId;
+          copyButton.addClass('clipboard-btn');
+          copyButton.attr('data-clipboard-target-id', codeId);
+
+          var figcaption = figure.querySelector('figcaption');
+
+          if (figcaption) {
+            figcaption.append(copyButton[0]);
+          } else {
+            figure.prepend(copyButton[0]);
+          }
+        })
+
+        var clipboard = new ClipboardJS('.clipboard-btn', {
+          target: function(trigger) {
+            return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+          }
+        });
+        clipboard.on('success', function(e) {
+          e.clearSelection();
+        })
+      })
+    </script>
+
+    
+    
+
+    
+
+
+
+<script src="/js/script.js"></script>
+
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-mask"></div>
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="站内搜索" />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+    
+</body>
+</html>
