@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-03T06:49:48.000Z</updated>
+  <updated>2020-05-04T05:30:44.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows API链接GLAD绘制OpenGL</title>
+    <link href="http://yoursite.com/2020/05/04/JEngine-Win32-GLAD-tutorial/"/>
+    <id>http://yoursite.com/2020/05/04/JEngine-Win32-GLAD-tutorial/</id>
+    <published>2020-05-04T05:22:24.000Z</published>
+    <updated>2020-05-04T05:30:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><p>&#x5728;&#x4F7F;&#x7528;win32 API&#x8FDB;&#x884C;&#x7F16;&#x5199;windows&#x7A97;&#x53E3;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x94FE;&#x63A5;GLAD&#x7684;OpenGL&#x5185;&#x5BB9;&#x3002;</p><a id="more"></a><p></p><figure class="highlight cpp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">HWND m_hwnd;</span><br><span class="line">HDC m_dc;</span><br><span class="line">HGLRC m_rc;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">WinApiGLContext::Init</span><span class="hljs-params">()</span> </span>{</span><br><span class="line"></span><br><span class="line">PIXELFORMATDESCRIPTOR pfd = {</span><br><span class="line"><span class="hljs-keyword">sizeof</span>(PIXELFORMATDESCRIPTOR),  <span class="hljs-comment">//  size of this pfd  </span></span><br><span class="line"><span class="hljs-number">1</span>,                     <span class="hljs-comment">// version number  </span></span><br><span class="line">PFD_DRAW_TO_WINDOW |   <span class="hljs-comment">// support window  </span></span><br><span class="line">PFD_SUPPORT_OPENGL |  <span class="hljs-comment">// support OpenGL  </span></span><br><span class="line">PFD_DOUBLEBUFFER,      <span class="hljs-comment">// double buffered  </span></span><br><span class="line">PFD_TYPE_RGBA,         <span class="hljs-comment">// RGBA type  </span></span><br><span class="line"><span class="hljs-number">24</span>,                    <span class="hljs-comment">// 24-bit color depth  </span></span><br><span class="line"><span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>,      <span class="hljs-comment">// color bits ignored  </span></span><br><span class="line"><span class="hljs-number">0</span>,                     <span class="hljs-comment">// no alpha buffer  </span></span><br><span class="line"><span class="hljs-number">0</span>,                     <span class="hljs-comment">// shift bit ignored  </span></span><br><span class="line"><span class="hljs-number">0</span>,                     <span class="hljs-comment">// no accumulation buffer  </span></span><br><span class="line"><span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>,            <span class="hljs-comment">// accum bits ignored  </span></span><br><span class="line"><span class="hljs-number">32</span>,                    <span class="hljs-comment">// 32-bit z-buffer      </span></span><br><span class="line"><span class="hljs-number">0</span>,                     <span class="hljs-comment">// no stencil buffer  </span></span><br><span class="line"><span class="hljs-number">0</span>,                     <span class="hljs-comment">// no auxiliary buffer  </span></span><br><span class="line">PFD_MAIN_PLANE,        <span class="hljs-comment">// main layer  </span></span><br><span class="line"><span class="hljs-number">0</span>,                     <span class="hljs-comment">// reserved  </span></span><br><span class="line"><span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>                <span class="hljs-comment">// layer masks ignored  </span></span><br><span class="line">};</span><br><span class="line"></span><br><span class="line">m_dc = GetDC(m_hwnd);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> pf = ChoosePixelFormat(m_dc, &amp;pfd);</span><br><span class="line">SetPixelFormat(m_dc, pf, &amp;pfd);</span><br><span class="line"></span><br><span class="line">m_rc = wglCreateContext(m_dc);</span><br><span class="line">wglMakeCurrent(m_dc, m_rc);</span><br><span class="line"></span><br><span class="line">gladLoadGL();</span><br><span class="line">JE_CORE_INFO(<span class="hljs-string">&quot;OpenGL Vendor: {0}&quot;</span>, glGetString(GL_VENDOR));</span><br><span class="line">JE_CORE_INFO(<span class="hljs-string">&quot;OpenGL Renderer: {0}&quot;</span>, glGetString(GL_RENDERER));</span><br><span class="line">JE_CORE_INFO(<span class="hljs-string">&quot;OpenGL version: {0}&quot;</span>, glGetString(GL_VERSION));</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">WinApiGLContext::SwapBuffer</span><span class="hljs-params">()</span> </span>{</span><br><span class="line">SwapBuffers(m_dc);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p><p>&#x6CE8;&#xFF1A;&#x4E00;&#x5B9A;&#x8981;&#x8BB0;&#x5F97;&#x6E32;&#x67D3;&#x4E4B;&#x524D;&#x8BBE;&#x7F6E;glViewport&#xFF0C;&#x56E0;&#x4E3A;GLFW&#x597D;&#x50CF;&#x662F;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;viewport&#xFF0C;&#x6211;&#x8FC1;&#x79FB;&#x5230;winAPI&#x4E4B;&#x540E;&#x624D;&#x53D1;&#x73B0;&#x6211;&#x5FD8;&#x8BB0;&#x4E86;TAT</p></body></html>]]></content>
+    
+    <summary type="html">
+    
+      &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&amp;#x5728;&amp;#x4F7F;&amp;#x7528;win32 API&amp;#x8FDB;&amp;#x884C;&amp;#x7F16;&amp;#x5199;windows&amp;#x7A97;&amp;#x53E3;&amp;#x65F6;&amp;#xFF0C;&amp;#x9700;&amp;#x8981;&amp;#x94FE;&amp;#x63A5;GLAD&amp;#x7684;OpenGL&amp;#x5185;&amp;#x5BB9;&amp;#x3002;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+    
+    </summary>
+    
+    
+      <category term="JEngine" scheme="http://yoursite.com/categories/JEngine/"/>
+    
+    
+      <category term="JEngine" scheme="http://yoursite.com/tags/JEngine/"/>
+    
+      <category term="OpenGL" scheme="http://yoursite.com/tags/OpenGL/"/>
+    
+  </entry>
   
   <entry>
     <title>2020.4.15</title>
