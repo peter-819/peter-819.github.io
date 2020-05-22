@@ -252,115 +252,6 @@
         <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            <a href="/2020/05/17/Internship-NextEngine-RHIopengl-1/" itemprop="url">Internship-NextEngine-RHIopengl-1</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2020-05-17T05:35:18.000Z" itemprop="datePublished">5月 17 2020</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Classified/">Classified</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            2 分钟 读完 (约 236 字)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><ul>
-<li>???<ul>
-<li>RHIPlatformHandle?</li>
-<li>ConstBuffer bind?</li>
-<li>Dynamic VBO?</li>
-<li>Render Pass?</li>
-</ul>
-</li>
-</ul>
-<h3 id="RHI-Implement-GLES3"><a href="#RHI-Implement-GLES3" class="headerlink" title="RHI/Implement/GLES3"></a>RHI/Implement/GLES3</h3><ul>
-<li>GLES3Buffer<ul>
-<li>ConstBuffer</li>
-<li>VertexBuffer</li>
-<li>IndexBuffer</li>
-</ul>
-</li>
-<li>GLES3ConstantBuffer<ul>
-<li>&#x4F20;&#x7ED9;shader&#x7684;uniform buffer</li>
-<li>&#x4E0D;&#x592A;&#x660E;&#x767D;&#x8FD9;&#x4E2A;dynamic buffer&#x7684;&#x533A;&#x522B;&#x548C;&#x5B9E;&#x73B0;</li>
-</ul>
-</li>
-<li>GLES3Context<ul>
-<li>&#x8FD8;&#x6CA1;&#x770B;&#xFF0C;&#x5E94;&#x8BE5;&#x5C31;&#x662F;&#x8BBE;&#x7F6E;&#x6E32;&#x67D3;&#x5185;&#x5BB9;&#x53C2;&#x6570;&#x548C;swapbuffer</li>
-</ul>
-</li>
-<li>GLES3Device<ul>
-<li>&#x65B9;&#x6CD5;&#x5927;&#x96C6;&#x5408;</li>
-</ul>
-</li>
-<li>GLES3FrameBuffer<ul>
-<li>&#x7BA1;&#x7406;&#x6E32;&#x67D3;&#x7F13;&#x5B58;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x6E32;&#x67D3;&#x5230;&#x5C4F;&#x5E55;&#xFF0C;&#x7ED1;&#x5B9A;&#x5176;&#x4ED6;&#x662F;&#x79BB;&#x5C4F;&#x6E32;&#x67D3;</li>
-</ul>
-</li>
-<li>GLES3GpuPrograms<ul>
-<li>&#x4E0D;&#x77E5;&#x9053; : TODO</li>
-</ul>
-</li>
-<li>GLES3Pipeline<ul>
-<li>&#x8BBE;&#x7F6E;blend,rasterization,stencil&amp;depth&#x53C2;&#x6570;&#xFF0C;&#x7ED8;&#x5236;&#x524D;&#x5EF6;&#x8FDF;&#x5E94;&#x7528;&#x8BBE;&#x7F6E;</li>
-</ul>
-</li>
-<li>GLES3Program<ul>
-<li>&#x521B;&#x5EFA;&#xFF0C;&#x5E94;&#x7528;Program&#xFF0C;AttachShader&#x3002;</li>
-</ul>
-</li>
-<li>GLES3RenderPass<ul>
-<li>&#x5904;&#x7406;rendertarget&#xFF0C;&#x79BB;&#x5C4F;&#x6E32;&#x67D3;&#x76F8;&#x5173;&#xFF0C;&#x5B9E;&#x73B0;&#x6CA1;&#x770B;&#x61C2;</li>
-</ul>
-</li>
-<li>GLES3Sample<ul>
-<li>&#x5404;&#x79CD;&#x7EB9;&#x7406;&#x91C7;&#x6837;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;</li>
-</ul>
-</li>
-<li>GLES3Shader<ul>
-<li>&#x8FD8;&#x6CA1;&#x770B; : TODO</li>
-</ul>
-</li>
-<li>GLES3Texture<ul>
-<li>&#x8FD8;&#x6CA1;&#x770B; : TODO</li>
-</ul>
-</li>
-<li>GLES3VBO<ul>
-<li>VBO&#x5BF9;&#x8C61;&#xFF0C;&#x7ED1;&#x5B9A;Vertex/Index Buffer &#x8D1F;&#x8D23;&#x7ED8;&#x5236;&#x7B49;&#x64CD;&#x4F5C;</li>
-<li>dynamicVBO  &#x4E0D;&#x77E5;&#x9053; : TODO</li>
-</ul>
-</li>
-<li>GLES3Window<ul>
-<li>&#x8FD8;&#x6CA1;&#x770B; :TODO</li>
-</ul>
-</li>
-</ul>
-<p><em>//&#x603B;&#x4E4B;&#x8FD8;&#x662F;&#x5404;&#x79CD;&#x7C7B;&#x7684;OpenGL&#x5B9E;&#x73B0;&#xFF0C;&#x5B9E;&#x73B0;&#x5E76;&#x4E0D;&#x96BE;&#x61C2;&#xFF0C;&#x4F46;&#x662F;&#x4E0A;&#x5C42;&#x62BD;&#x8C61;&#x592A;&#x591A;&#x4E86;&#xFF0C;&#x9700;&#x8981;&#x5F80;&#x4E0A;&#x5C42;&#x770B;&#x770B;&#x3002;</em></p>
-</body></html>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
             <a href="/2020/05/16/Learning-DB-1/" itemprop="url">数据库系统-1</a>
         
     </h1>
@@ -684,6 +575,46 @@
         <html><head></head><body><p>&#x5728;&#x4F7F;&#x7528;win32 API&#x8FDB;&#x884C;&#x7F16;&#x5199;windows&#x7A97;&#x53E3;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x94FE;&#x63A5;GLAD&#x7684;OpenGL&#x5185;&#x5BB9;&#x3002;</p></body></html>
         <p class="article-more-link">
             <a href="/2020/05/04/JEngine-Win32-GLAD-tutorial/#more">阅读更多</a>
+        </p>
+    
+    </div>
+    
+    
+</article>
+
+
+
+
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            <a href="/2020/05/03/Nothing-2020-4-15/" itemprop="url">2020.4.15</a>
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2020-05-03T06:47:14.000Z" itemprop="datePublished">5月 3 2020</time>
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/Nothing/">Nothing</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            7 分钟 读完 (约 1099 字)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><p>&#x5927;&#x6982;&#x4ECE;2.3&#x53F7;&#x5F00;&#x59CB;&#x8BF4;&#x8D77;&#x5427;&#xFF0C;&#x4ECE;&#x6253;&#x5F00;youtube&#x770B;&#x5230;&#x4E86;&#x90A3;&#x4E2A;openGL&#x6559;&#x7A0B;&#xFF0C;&#x4ECE;&#x770B;&#x77E5;&#x4E4E;&#x63A8;&#x8350;&#x4E0B;&#x4E86;&#x4E00;&#x672C;&#x300A;Real Time Rendering&#x300B;&#xFF0C;&#x5C31;&#x5F00;&#x59CB;&#x4E86;&#x8FD9;&#x4E24;&#x4E2A;&#x6708;&#x7684;&#x6545;&#x4E8B;&#x3002;</p></body></html>
+        <p class="article-more-link">
+            <a href="/2020/05/03/Nothing-2020-4-15/#more">阅读更多</a>
         </p>
     
     </div>

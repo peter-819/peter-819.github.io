@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/Classified/index.html</loc>
+    
+    <lastmod>2020-05-22T10:41:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/05/22/Internship-Diary-5-7/</loc>
     
     <lastmod>2020-05-22T05:24:20.000Z</lastmod>
@@ -44,7 +51,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/05/17/Internship-NextEngine-RHIopengl-1/</loc>
+    <loc>http://yoursite.com/Classified/Internship-NextEngine-RHIopengl-1.html</loc>
     
     <lastmod>2020-05-18T15:01:26.000Z</lastmod>
     
