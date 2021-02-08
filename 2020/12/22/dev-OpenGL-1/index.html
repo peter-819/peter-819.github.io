@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+<title>图形学兔兔作业 - Jerome&#39;s Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
+
+
+
+
+<meta name="description" content="WHU sutdent, Computer Graphic, Game Engine">
+
+
+
+
+
+    <meta name="description" content="&amp;#x597D;&amp;#x4E45;&amp;#x6CA1;&amp;#x5199;&amp;#x8FC7;GL&amp;#x4E86;&amp;#xFF0C;&amp;#x6B63;&amp;#x597D;&amp;#x6765;&amp;#x53D1;&amp;#x53D1;&amp;#x6559;&amp;#x7A0B;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图形学兔兔作业">
+<meta property="og:url" content="http://yoursite.com/2020/12/22/dev-OpenGL-1/index.html">
+<meta property="og:site_name" content="Jerome&#39;s Blog">
+<meta property="og:description" content="&amp;#x597D;&amp;#x4E45;&amp;#x6CA1;&amp;#x5199;&amp;#x8FC7;GL&amp;#x4E86;&amp;#xFF0C;&amp;#x6B63;&amp;#x597D;&amp;#x6765;&amp;#x53D1;&amp;#x53D1;&amp;#x6559;&amp;#x7A0B;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:%5CUsers%5Cpeter%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20201223022259881.png">
+<meta property="og:image" content="c:%5CUsers%5Cpeter%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20201223022325626.png">
+<meta property="article:published_time" content="2020-12-22T15:55:25.000Z">
+<meta property="article:modified_time" content="2020-12-22T18:28:58.082Z">
+<meta property="article:author" content="Jerome">
+<meta property="article:tag" content="OpenGL">
+<meta property="article:tag" content="CG">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:%5CUsers%5Cpeter%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20201223022259881.png">
+
+
+
+
+
+<link rel="icon" href="/images/logo.png">
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ovo|Source+Code+Pro">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Jerome's Blog" type="application/atom+xml">
+</head>
+<body>
+    
+<nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item navbar-logo" href="/">
+                
+                    
+                    Jerome&#39;s Blog
+                    
+                
+            </a>
+            <div class="navbar-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="navbar-menu navbar-start">
+            
+            <a class="navbar-item "
+               href="/archives">档案</a>
+            
+            <a class="navbar-item "
+               href="/categories/Internship">实习</a>
+            
+            <a class="navbar-item "
+               href="/categories/Development">开发</a>
+            
+            <a class="navbar-item "
+               href="/categories/Learning">学习</a>
+            
+            <a class="navbar-item "
+               href="/categories/JEngine">JEngine</a>
+            
+            <a class="navbar-item "
+               href="/about">关于</a>
+            
+        </div>
+        
+        <div class="navbar-menu navbar-end">
+            
+            <a class="navbar-item search" title="搜索" href="javascript:;">
+                <i class="fas fa-search"></i>
+            </a>
+            
+            
+            
+            <a class="navbar-item" title="GitHub" href="https://github.com/peter-819" target="_blank" rel="noopener">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+               
+            
+        </div>
+    </div>
+</nav>
+
+    <section class="section">
+    <div class="container">
+    <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            图形学兔兔作业
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2020-12-22T15:55:25.000Z" itemprop="datePublished">12月 22 2020</time>
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/Development/">Development</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            18 分钟 读完 (约 2763 字)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><p>&#x597D;&#x4E45;&#x6CA1;&#x5199;&#x8FC7;GL&#x4E86;&#xFF0C;&#x6B63;&#x597D;&#x6765;&#x53D1;&#x53D1;&#x6559;&#x7A0B;</p>
+<a id="more"></a>
+
+<h2 id="&#x8981;&#x6C42;"><a href="#&#x8981;&#x6C42;" class="headerlink" title="&#x8981;&#x6C42;"></a>&#x8981;&#x6C42;</h2><p>&#x7ED9;&#x51FA;&#x5154;&#x5154;&#x7684;&#x9876;&#x70B9;&#x5750;&#x6807;&#x4E0E;&#x4E09;&#x89D2;&#x9762;&#x7D22;&#x5F15;&#xFF0C;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<ol>
+<li>&#x7ED8;&#x5236;&#x6A21;&#x578B;&#xFF0C;&#x51AF;&#x6C0F;&#x5149;&#x7167;</li>
+<li>&#x6A21;&#x578B;&#x53CA;&#x89C6;&#x89D2;&#x79FB;&#x52A8;</li>
+<li>&#x9F20;&#x6807;&#x70B9;&#x9009;&#x9AD8;&#x4EAE;&#x67D0;&#x4E09;&#x89D2;&#x9762;</li>
+</ol>
+<h2 id="&#x603B;&#x4F53;&#x601D;&#x8DEF;-amp-&#x5751;&#x70B9;"><a href="#&#x603B;&#x4F53;&#x601D;&#x8DEF;-amp-&#x5751;&#x70B9;" class="headerlink" title="&#x603B;&#x4F53;&#x601D;&#x8DEF; &amp; &#x5751;&#x70B9;"></a>&#x603B;&#x4F53;&#x601D;&#x8DEF; &amp; &#x5751;&#x70B9;</h2><p>&#x200B;    <em>For &#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;OpenGL&#x7F16;&#x5199;&#x7684;&#x670B;&#x53CB;</em></p>
+<ul>
+<li><p>&#x5BFC;&#x5165;&#x6A21;&#x578B; &#xFF1A;&#x7ED9;&#x51FA;&#x7684;&#x6570;&#x636E;&#x4E3A;&#x9876;&#x70B9;&#x5750;&#x6807;&#xFF0C;&#x6CA1;&#x6709;&#x6CD5;&#x7EBF;&#x4FE1;&#x606F;&#xFF0C;&#x9700;&#x8981;&#x6C42;&#x89E3;&#x6CD5;&#x7EBF;&#xFF0C;&#x5728;&#x6211;&#x7684;&#x5B9E;&#x73B0;&#x4E2D;&#x5BF9;&#x6BCF;&#x4E00;&#x4E09;&#x89D2;&#x9762;&#x6839;&#x636E;&#x4E09;&#x70B9;&#x5750;&#x6807;&#x6C42;&#x89E3;&#x4E86;&#x6CD5;&#x7EBF;&#xFF0C;&#x6CA1;&#x6709;&#x8FDB;&#x884C;&#x6CD5;&#x7EBF;&#x63D2;&#x503C;&#xFF0C;&#x8FD9;&#x4F1A;&#x4F7F;&#x5F97;&#x5154;&#x5154;&#x8868;&#x9762;&#x4E0D;&#x591F;&#x5706;&#x6DA6;&#xFF0C;&#x5E76;&#x4E14;&#x9700;&#x8981; NumFace * 3 &#x5927;&#x5C0F;&#x7684;VBO&#xFF0C;&#x8F83;&#x6D6A;&#x8D39;&#x7A7A;&#x95F4;&#x3002;&#x6309;&#x9053;&#x7406;&#x53EF;&#x4EE5;&#x5BF9;&#x6BCF;&#x4E00;&#x70B9;&#x6C42;&#x89E3;&#x6CD5;&#x7EBF;&#xFF0C;&#x4F7F;&#x7528;&#x8BE5;&#x70B9;&#x4E0E;&#x90BB;&#x63A5;&#x70B9;&#x7684;&#x5411;&#x91CF;&#x8FDB;&#x884C;&#x52A0;&#x6743;&#x5E73;&#x5747;&#xFF0C;&#x5177;&#x4F53;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x94FE;&#x63A5; <a href="http://www.bytehazard.com/articles/vertnorm.html" target="_blank" rel="noopener">Weighted Vertex Normals</a> </p>
+</li>
+<li><p>&#x5149;&#x7167;&#x6A21;&#x578B;&#xFF1A;&#x6CA1;&#x4EC0;&#x4E48;&#x7279;&#x522B;&#x7684;&#xFF0C;Blinn-Phong&#x6216;&#x8005;Phong&#x7684;Shader</p>
+</li>
+<li><p>&#x6A21;&#x578B;&#x53CA;&#x89C6;&#x89D2;&#x79FB;&#x52A8;&#xFF1A;&#x4E5F;&#x6CA1;&#x4EC0;&#x4E48;&#x7279;&#x522B;&#x7684;&#xFF0C;&#x53D6;&#x4E0B;&#x5E27;&#x95F4;&#x9F20;&#x6807;&#x394;&#x503C;&#x548C;&#x952E;&#x76D8;&#x6309;&#x952E;&#x53D8;model view&#x77E9;&#x9635;&#x5C31;&#x884C;&#x4E86;</p>
+</li>
+<li><p>&#x70B9;&#x9009;&#x9AD8;&#x4EAE;&#xFF1A;&#x8FD9;&#x4E2A;&#x8FD8;&#x86EE;&#x6709;&#x8DA3;&#x7684;&#xFF0C;&#x60F3;&#x4E86;&#x4E2A;&#x529E;&#x6CD5;&#xFF0C;&#x5E94;&#x8BE5;&#x4E0D;&#x662F;&#x6700;&#x4F18;&#x89E3;&#xFF0C;&#x7528;&#x4E00;&#x4E2A;drawcall&#x7ED8;&#x5236;&#x4E00;&#x5F20;&#x6BCF;&#x4E2A;&#x9762;&#x989C;&#x8272;&#x90FD;&#x662F;&#x8BE5;&#x9762;&#x7D22;&#x5F15;&#x503C; / &#x603B;&#x9762;&#x6570;&#x7684;RT&#xFF0C;&#x7136;&#x540E;readBack&#x4E00;&#x4E0B;&#x9F20;&#x6807;&#x4F4D;&#x7F6E;&#x7684;&#x989C;&#x8272;&#xFF0C;&#x62FF;&#x5230;&#x9AD8;&#x4EAE;&#x9762;&#x7684;&#x9876;&#x70B9;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x76F4;&#x63A5;&#x518D;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;drawcall&#x753B;&#x8FD9;&#x4E09;&#x89D2;&#xFF0C;&#x5E94;&#x8BE5;&#x662F;&#x591A;&#x4F59;&#x4E86;&#x3002;</p>
+</li>
+</ul>
+<h2 id="&#x5B9E;&#x73B0;&#x7EC6;&#x8282;"><a href="#&#x5B9E;&#x73B0;&#x7EC6;&#x8282;" class="headerlink" title="&#x5B9E;&#x73B0;&#x7EC6;&#x8282;"></a>&#x5B9E;&#x73B0;&#x7EC6;&#x8282;</h2><p><em>For &#x4E0D;&#x600E;&#x4E48;&#x719F;&#x6089;OpenGL&#x7684;&#x670B;&#x53CB;</em></p>
+<h4 id="&#x914D;&#x7F6E;OpenGL&#x73AF;&#x5883;"><a href="#&#x914D;&#x7F6E;OpenGL&#x73AF;&#x5883;" class="headerlink" title="&#x914D;&#x7F6E;OpenGL&#x73AF;&#x5883;"></a>&#x914D;&#x7F6E;OpenGL&#x73AF;&#x5883;</h4><ul>
+<li>&#x4F7F;&#x7528;GLFW&#x521D;&#x59CB;&#x5316;&#x7A97;&#x53E3;</li>
+</ul>
+<p></p><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GLFW is a lightweight utility library for use with OpenGL. GLFW stands for Graphics Library Framework. It provides programmers with the ability to create and manage windows and OpenGL contexts, as well as handle joystick, keyboard and mouse input.</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>&#x4E00;&#x822C;&#x4F7F;&#x7528;GLFW&#x4F5C;&#x4E3A;&#x8DE8;&#x5E73;&#x53F0;&#x7684;&#x7A97;&#x53E3;&#x5DE5;&#x5177;&#xFF0C;&#x5728;&#x672C;&#x4F8B;&#x4E2D;&#x5C31;&#x4F5C;&#x4E3A;&#x521B;&#x5EFA;OpenGL<strong>&#x7ED8;&#x5236;&#x7A97;&#x53E3;&#xFF0C;&#x5904;&#x7406;&#x9F20;&#x6807;&#x952E;&#x76D8;&#x4E8B;&#x4EF6;</strong>&#x7684;API&#x3002;</p>
+<ul>
+<li>&#x4F7F;&#x7528;GLAD&#x94FE;&#x63A5;OpenGL API</li>
+</ul>
+<p>&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x8BA4;&#x4E3A;&#xFF0C;&#x867D;&#x7136;&#x5404;&#x4E2A;&#x5E73;&#x53F0;&#x90FD;&#x652F;&#x6301;OpenGL&#x7ED8;&#x5236;&#xFF0C;&#x4F46;&#x4E00;&#x822C;&#x90FD;&#x4EC5;&#x4EC5;&#x662F;&#x63D0;&#x4F9B;&#x4E86;&#x6309;<strong>OpenGL&#x6807;&#x51C6;</strong>&#x6240;&#x5B9E;&#x73B0;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x94FE;&#x63A5;&#x5E93;&#xFF0C;&#x5982;WIndows&#x4E0B;&#x9ED8;&#x8BA4;&#x9759;&#x6001;&#x94FE;&#x63A5;&#x5E93;&#x4F1A;&#x6709;opengl32.lib&#xFF0C;&#x4F46;&#x4ECD;&#x7136;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x53BB;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x52A0;&#x8F7D;&#x8FD9;&#x4E00;dll&#xFF0C;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x7B26;&#x5408;&#x6807;&#x51C6;&#x7684;c++&#x5934;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;<strong>&#x5C06;&#x4E8C;&#x8FDB;&#x5236;&#x5E93;&#x4E2D;&#x7684;&#x5B9E;&#x73B0;&#x52A0;&#x8F7D;</strong>&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x51FD;&#x6570;API&#x4E0A;&#x3002;</p>
+<p></p><figure class="highlight cpp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Application::Run</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>{</span><br><span class="line">    <span class="hljs-comment">//Initialize GLFW Window</span></span><br><span class="line">    glfwInit();</span><br><span class="line">    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, <span class="hljs-number">3</span>);</span><br><span class="line">    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, <span class="hljs-number">3</span>);</span><br><span class="line">    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);</span><br><span class="line">    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);</span><br><span class="line">    window = glfwCreateWindow(<span class="hljs-number">800</span>, <span class="hljs-number">600</span>, <span class="hljs-string">&quot;Bunny&quot;</span>, <span class="hljs-literal">NULL</span>, <span class="hljs-literal">NULL</span>);</span><br><span class="line">    <span class="hljs-keyword">if</span> (window == <span class="hljs-literal">NULL</span>)</span><br><span class="line">    {</span><br><span class="line">        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Failed to create GLFW window&quot;</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;</span><br><span class="line">        glfwTerminate();</span><br><span class="line">    }</span><br><span class="line">    glfwMakeContextCurrent(window);</span><br><span class="line">    <span class="hljs-comment">//Initialize GLAD</span></span><br><span class="line">    <span class="hljs-keyword">if</span> (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))</span><br><span class="line">    {</span><br><span class="line">        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Failed to initialize GLAD&quot;</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;</span><br><span class="line">    }</span><br><span class="line">    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);</span><br><span class="line"></span><br><span class="line">    Init(); <span class="hljs-comment">//Read Data From File &amp; Initialize VAOs FBOs</span></span><br><span class="line">    <span class="hljs-keyword">while</span> (!glfwWindowShouldClose(window))</span><br><span class="line">    {</span><br><span class="line">        Render();   <span class="hljs-comment">//Main Render Function</span></span><br><span class="line">        glfwSwapBuffers(window);</span><br><span class="line">        glfwPollEvents();</span><br><span class="line">    }</span><br><span class="line">    glfwTerminate();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="&#x5904;&#x7406;&#x8F93;&#x5165;"><a href="#&#x5904;&#x7406;&#x8F93;&#x5165;" class="headerlink" title="&#x5904;&#x7406;&#x8F93;&#x5165;"></a>&#x5904;&#x7406;&#x8F93;&#x5165;</h4><ul>
+<li>&#x5C06;&#x6240;&#x6709;&#x70B9;&#x4E0E;&#x7D22;&#x5F15;&#x8F93;&#x5165;&#xFF0C;&#x6309;&#x9762;&#x987A;&#x5E8F;&#x6392;&#x5E8F;&#xFF0C;&#x6BCF;&#x4E2A;&#x70B9;&#x6709;7&#x4E2A;float&#x7684;&#x957F;&#x5EA6;&#xFF1A;<ul>
+<li>&#x4F4D;&#x7F6E;&#xFF1A;vec3</li>
+<li>&#x6CD5;&#x7EBF;&#xFF1A;vec3</li>
+<li>&#x9762;&#x7F16;&#x53F7;&#xFF08;&#x5F52;&#x4E00;&#x5316;&#xFF09;&#xFF1A;float</li>
+</ul>
+</li>
+</ul>
+<p></p><figure class="highlight cpp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Application::Init</span><span class="hljs-params">()</span> </span>{</span><br><span class="line">    <span class="hljs-comment">//Read From File</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-built_in">std</span>::ifstream <span class="hljs-title">fin</span><span class="hljs-params">(<span class="hljs-string">&quot;bunny_iH.ply2&quot;</span>)</span></span>;</span><br><span class="line">    <span class="hljs-keyword">if</span> (!fin) {</span><br><span class="line">        assert(<span class="hljs-literal">false</span>);</span><br><span class="line">    }</span><br><span class="line">    numVertices = <span class="hljs-number">0</span>;</span><br><span class="line">    fin &gt;&gt; numVertices;</span><br><span class="line">    fin &gt;&gt; numFaces;</span><br><span class="line">    vertices = <span class="hljs-keyword">new</span> <span class="hljs-keyword">float</span>[(<span class="hljs-keyword">size_t</span>)numVertices * <span class="hljs-number">3</span>];</span><br><span class="line">    sortedVertices = <span class="hljs-keyword">new</span> <span class="hljs-keyword">float</span>[(<span class="hljs-keyword">size_t</span>)numFaces * <span class="hljs-number">3</span> * <span class="hljs-number">7</span>];</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; numVertices; i++) {</span><br><span class="line">        fin &gt;&gt; vertices[i * <span class="hljs-number">3</span>] &gt;&gt; vertices[i * <span class="hljs-number">3</span> + <span class="hljs-number">1</span>] &gt;&gt; vertices[i * <span class="hljs-number">3</span> + <span class="hljs-number">2</span>];</span><br><span class="line">    }</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; numFaces; i++) {</span><br><span class="line">        <span class="hljs-keyword">int</span> a, b, c, d;</span><br><span class="line">        fin &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; d;    <span class="hljs-comment">// a always equals to 3</span></span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">int</span> v1 = i * <span class="hljs-number">3</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> v2 = i * <span class="hljs-number">3</span> + <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> v3 = i * <span class="hljs-number">3</span> + <span class="hljs-number">2</span>;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-comment">// position : vec3      [v*7, v*7+2]</span></span><br><span class="line">        <span class="hljs-comment">// normal : vec3        [v*7+3, v*7+5]</span></span><br><span class="line">        <span class="hljs-comment">// faceIndex : float    [v*7+6, v*7+6]</span></span><br><span class="line"></span><br><span class="line">        sortedVertices[v1 * <span class="hljs-number">7</span>] = vertices[b * <span class="hljs-number">3</span>];</span><br><span class="line">        sortedVertices[v1 * <span class="hljs-number">7</span> + <span class="hljs-number">1</span>] = vertices[b * <span class="hljs-number">3</span> + <span class="hljs-number">1</span>];</span><br><span class="line">        sortedVertices[v1 * <span class="hljs-number">7</span> + <span class="hljs-number">2</span>] = vertices[b * <span class="hljs-number">3</span> + <span class="hljs-number">2</span>];</span><br><span class="line"></span><br><span class="line">        sortedVertices[v2 * <span class="hljs-number">7</span>] = vertices[c * <span class="hljs-number">3</span>];</span><br><span class="line">        sortedVertices[v2 * <span class="hljs-number">7</span> + <span class="hljs-number">1</span>] = vertices[c * <span class="hljs-number">3</span> + <span class="hljs-number">1</span>];</span><br><span class="line">        sortedVertices[v2 * <span class="hljs-number">7</span> + <span class="hljs-number">2</span>] = vertices[c * <span class="hljs-number">3</span> + <span class="hljs-number">2</span>];</span><br><span class="line"></span><br><span class="line">        sortedVertices[v3 * <span class="hljs-number">7</span>] = vertices[d * <span class="hljs-number">3</span>];</span><br><span class="line">        sortedVertices[v3 * <span class="hljs-number">7</span> + <span class="hljs-number">1</span>] = vertices[d * <span class="hljs-number">3</span> + <span class="hljs-number">1</span>];</span><br><span class="line">        sortedVertices[v3 * <span class="hljs-number">7</span> + <span class="hljs-number">2</span>] = vertices[d * <span class="hljs-number">3</span> + <span class="hljs-number">2</span>];</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">float</span>* normal = <span class="hljs-keyword">new</span> <span class="hljs-keyword">float</span>[<span class="hljs-number">3</span>];</span><br><span class="line">        calcNormal(&amp;sortedVertices[v1 * <span class="hljs-number">7</span>], &amp;sortedVertices[v2 * <span class="hljs-number">7</span>], &amp;sortedVertices[v3 * <span class="hljs-number">7</span>], normal);</span><br><span class="line"></span><br><span class="line">        sortedVertices[v1 * <span class="hljs-number">7</span> + <span class="hljs-number">3</span>] = normal[<span class="hljs-number">0</span>];</span><br><span class="line">        sortedVertices[v1 * <span class="hljs-number">7</span> + <span class="hljs-number">4</span>] = normal[<span class="hljs-number">1</span>];</span><br><span class="line">        sortedVertices[v1 * <span class="hljs-number">7</span> + <span class="hljs-number">5</span>] = normal[<span class="hljs-number">2</span>];</span><br><span class="line">        sortedVertices[v1 * <span class="hljs-number">7</span> + <span class="hljs-number">6</span>] = (<span class="hljs-keyword">float</span>)i / numFaces;</span><br><span class="line"></span><br><span class="line">        sortedVertices[v2 * <span class="hljs-number">7</span> + <span class="hljs-number">3</span>] = normal[<span class="hljs-number">0</span>];</span><br><span class="line">        sortedVertices[v2 * <span class="hljs-number">7</span> + <span class="hljs-number">4</span>] = normal[<span class="hljs-number">1</span>];</span><br><span class="line">        sortedVertices[v2 * <span class="hljs-number">7</span> + <span class="hljs-number">5</span>] = normal[<span class="hljs-number">2</span>];</span><br><span class="line">        sortedVertices[v2 * <span class="hljs-number">7</span> + <span class="hljs-number">6</span>] = (<span class="hljs-keyword">float</span>)i / numFaces;</span><br><span class="line"></span><br><span class="line">        sortedVertices[v3 * <span class="hljs-number">7</span> + <span class="hljs-number">3</span>] = normal[<span class="hljs-number">0</span>];</span><br><span class="line">        sortedVertices[v3 * <span class="hljs-number">7</span> + <span class="hljs-number">4</span>] = normal[<span class="hljs-number">1</span>];</span><br><span class="line">        sortedVertices[v3 * <span class="hljs-number">7</span> + <span class="hljs-number">5</span>] = normal[<span class="hljs-number">2</span>];</span><br><span class="line">        sortedVertices[v3 * <span class="hljs-number">7</span> + <span class="hljs-number">6</span>] = (<span class="hljs-keyword">float</span>)i / numFaces;</span><br><span class="line">    }</span><br><span class="line">    fin.close();</span><br></pre></td></tr></tbody></table></figure><p></p>
+<ul>
+<li>&#x6C42;&#x9762;&#x6CD5;&#x7EBF;&#xFF1A;&#x6C42;&#x4E24;&#x5411;&#x91CF;&#x53C9;&#x79EF;&#xFF0C;&#x5B9E;&#x73B0;&#x4E3A;&#x5316;&#x7B80;&#x8FC7;&#x540E;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</li>
+</ul>
+<p></p><figure class="highlight cpp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">calcNormal</span><span class="hljs-params">(<span class="hljs-keyword">float</span>* v1, <span class="hljs-keyword">float</span>* v2, <span class="hljs-keyword">float</span>* v3, <span class="hljs-keyword">float</span>* nor)</span> </span>{</span><br><span class="line">    <span class="hljs-keyword">float</span> na = (v2[<span class="hljs-number">1</span>] - v1[<span class="hljs-number">1</span>]) * (v3[<span class="hljs-number">2</span>] - v1[<span class="hljs-number">2</span>]) - (v2[<span class="hljs-number">2</span>] - v1[<span class="hljs-number">2</span>]) * (v3[<span class="hljs-number">1</span>] - v1[<span class="hljs-number">1</span>]);</span><br><span class="line">    <span class="hljs-keyword">float</span> nb = (v2[<span class="hljs-number">2</span>] - v1[<span class="hljs-number">2</span>]) * (v3[<span class="hljs-number">0</span>] - v1[<span class="hljs-number">0</span>]) - (v2[<span class="hljs-number">0</span>] - v1[<span class="hljs-number">0</span>]) * (v3[<span class="hljs-number">2</span>] - v1[<span class="hljs-number">2</span>]);</span><br><span class="line">    <span class="hljs-keyword">float</span> nc = (v2[<span class="hljs-number">0</span>] - v1[<span class="hljs-number">0</span>]) * (v3[<span class="hljs-number">1</span>] - v1[<span class="hljs-number">1</span>]) - (v2[<span class="hljs-number">1</span>] - v1[<span class="hljs-number">1</span>]) * (v3[<span class="hljs-number">0</span>] - v1[<span class="hljs-number">0</span>]);</span><br><span class="line"></span><br><span class="line">    nor[<span class="hljs-number">0</span>] = na;</span><br><span class="line">    nor[<span class="hljs-number">1</span>] = nb;</span><br><span class="line">    nor[<span class="hljs-number">2</span>] = nc;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="&#x521D;&#x59CB;&#x5316;Shader"><a href="#&#x521D;&#x59CB;&#x5316;Shader" class="headerlink" title="&#x521D;&#x59CB;&#x5316;Shader"></a>&#x521D;&#x59CB;&#x5316;Shader</h4><ul>
+<li><p>&#x672C;&#x5B9E;&#x73B0;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;&#x4E09;&#x4E2A;Shader&#xFF0C;&#x5206;&#x522B;&#x7528;&#x4E8E;&#x7ED8;&#x5236;&#x9762;&#x7D22;&#x5F15;&#xFF0C;&#x5149;&#x7167;&#x6A21;&#x578B;&#xFF0C;&#x9AD8;&#x4EAE;&#x4E09;&#x89D2;</p>
+<p></p><figure class="highlight cpp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Application::InitShader</span><span class="hljs-params">()</span> </span>{   </span><br><span class="line">    mShaders[<span class="hljs-string">&quot;BlinnPhong&quot;</span>] = <span class="hljs-keyword">new</span> Shader(<span class="hljs-string">&quot;BlinnPhong&quot;</span>);</span><br><span class="line">    mShaders[<span class="hljs-string">&quot;FaceIndex&quot;</span>] = <span class="hljs-keyword">new</span> Shader(<span class="hljs-string">&quot;FaceIndex&quot;</span>);</span><br><span class="line">    mShaders[<span class="hljs-string">&quot;postprocess&quot;</span>] = <span class="hljs-keyword">new</span> Shader(<span class="hljs-string">&quot;postprocess&quot;</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+</li>
+<li><p>&#x4ECE;&#x6587;&#x4EF6;&#x8BFB;&#x5165;Shader&#x4EE3;&#x7801;&#xFF08;&#x8FD9;&#x91CC;&#x6709;&#x4E2A;bug&#xFF0C;&#x5728;&#x6587;&#x4EF6;&#x5C3E;&#x4F1A;&#x8BFB;&#x5165;&#x51E0;&#x4E2A;&#x4E71;&#x7801;&#x5B57;&#x7B26;&#xFF0C;&#x8FD9;&#x91CC;&#x5728;shader&#x6700;&#x540E;<strong>&#x624B;&#x52A8;&#x52A0;&#x6362;&#x884C;</strong>&#x6682;&#x65F6;&#x5220;&#x6389;&#x4E86;&#x4E71;&#x7801;&#xFF09;</p>
+<p></p><figure class="highlight cpp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Shader::Shader(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; shaderName)</span><br><span class="line">{</span><br><span class="line">    <span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> vertShaderName = shaderName + <span class="hljs-string">&quot;.vert&quot;</span>;</span><br><span class="line">    <span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> fragShaderName = shaderName + <span class="hljs-string">&quot;.frag&quot;</span>;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-built_in">std</span>::ifstream <span class="hljs-title">vertFile</span><span class="hljs-params">(vertShaderName)</span></span>;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-built_in">std</span>::ifstream <span class="hljs-title">fragFile</span><span class="hljs-params">(fragShaderName)</span></span>;</span><br><span class="line">    <span class="hljs-keyword">if</span> (!vertFile || !fragFile) {</span><br><span class="line">        assert(<span class="hljs-literal">false</span>);</span><br><span class="line">    }</span><br><span class="line">    vertFile.seekg(<span class="hljs-number">0</span>, <span class="hljs-built_in">std</span>::ios::end);</span><br><span class="line">    <span class="hljs-keyword">int</span> length = vertFile.tellg();</span><br><span class="line">    GLchar* vertexShaderCode = <span class="hljs-keyword">new</span> GLchar[length];</span><br><span class="line">    vertFile.seekg(<span class="hljs-number">0</span>, <span class="hljs-built_in">std</span>::ios::beg);</span><br><span class="line">    vertFile.read(vertexShaderCode, length);</span><br><span class="line">    <span class="hljs-keyword">while</span> (vertexShaderCode[length - <span class="hljs-number">1</span>] != <span class="hljs-string">&apos;\n&apos;</span>) {	<span class="hljs-comment">//TODO</span></span><br><span class="line">        vertexShaderCode[length - <span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;</span><br><span class="line">        length--;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    fragFile.seekg(<span class="hljs-number">0</span>, <span class="hljs-built_in">std</span>::ios::end);</span><br><span class="line">    length = fragFile.tellg();</span><br><span class="line">    GLchar* fragmentShaderCode = <span class="hljs-keyword">new</span> GLchar[length];</span><br><span class="line">    fragFile.seekg(<span class="hljs-number">0</span>, <span class="hljs-built_in">std</span>::ios::beg);</span><br><span class="line">    fragFile.read(fragmentShaderCode, length);</span><br><span class="line">    <span class="hljs-keyword">while</span> (fragmentShaderCode[length - <span class="hljs-number">1</span>] != <span class="hljs-string">&apos;\n&apos;</span>) { <span class="hljs-comment">//TODO</span></span><br><span class="line">        fragmentShaderCode[length - <span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;</span><br><span class="line">        length--;</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure><p></p>
+</li>
+<li><p>&#x7F16;&#x8BD1;Shader&#x4EE3;&#x7801;</p>
+</li>
+</ul>
+<p></p><figure class="highlight cpp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">GLuint VertexShader = glCreateShader(GL_VERTEX_SHADER);</span><br><span class="line">glShaderSource(VertexShader, <span class="hljs-number">1</span>, &amp;vertexShaderCode, <span class="hljs-literal">NULL</span>);</span><br><span class="line">glCompileShader(VertexShader);</span><br><span class="line"></span><br><span class="line">GLuint FragmentShader = glCreateShader(GL_FRAGMENT_SHADER);</span><br><span class="line">glShaderSource(FragmentShader, <span class="hljs-number">1</span>, &amp;fragmentShaderCode, <span class="hljs-literal">NULL</span>);</span><br><span class="line">glCompileShader(FragmentShader);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mProgramID = glCreateProgram();</span><br><span class="line">glAttachShader(mProgramID, VertexShader);</span><br><span class="line">glAttachShader(mProgramID, FragmentShader);</span><br><span class="line">glLinkProgram(mProgramID);</span><br><span class="line">glUseProgram(mProgramID);</span><br><span class="line"></span><br><span class="line">GLint success;</span><br><span class="line">glGetProgramiv(mProgramID, GL_LINK_STATUS, &amp;success);</span><br><span class="line"><span class="hljs-keyword">if</span> (!success) {</span><br><span class="line">    GLchar infoLog[<span class="hljs-number">1024</span>];</span><br><span class="line">    glGetProgramInfoLog(mProgramID, <span class="hljs-number">512</span>, <span class="hljs-literal">NULL</span>, infoLog);</span><br><span class="line">    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; infoLog &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">glDeleteShader(VertexShader);</span><br><span class="line">glDeleteShader(FragmentShader);</span><br></pre></td></tr></tbody></table></figure><p></p>
+<ul>
+<li>&#x4F20;&#x5165;uniform &#x4EE5;&#x53CA; &#x7ED1;&#x5B9A;program</li>
+</ul>
+<p></p><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// Check location</span><br><span class="line">#define CHECK_LOC(loc) \</span><br><span class="line">    if(loc == -1){  \</span><br><span class="line">        assert(false);\</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">void Shader::SetMat(const std::string&amp; name, const glm::mat4&amp; mat)</span><br><span class="line">{</span><br><span class="line">    GLint loc = glGetUniformLocation(mProgramID, name.c_str());</span><br><span class="line">    CHECK_LOC(loc);</span><br><span class="line">    glUniformMatrix4fv(loc, 1, GL_FALSE, &amp;mat[0][0]);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">//setVec.......</span><br><span class="line">//setFloat.....</span><br><span class="line">//setInt.......</span><br><span class="line"></span><br><span class="line">void Shader::Bind()</span><br><span class="line">{</span><br><span class="line">    glUseProgram(mProgramID);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="&#x521D;&#x59CB;&#x5316;&#x9876;&#x70B9;&#x7F13;&#x51B2;"><a href="#&#x521D;&#x59CB;&#x5316;&#x9876;&#x70B9;&#x7F13;&#x51B2;" class="headerlink" title="&#x521D;&#x59CB;&#x5316;&#x9876;&#x70B9;&#x7F13;&#x51B2;"></a>&#x521D;&#x59CB;&#x5316;&#x9876;&#x70B9;&#x7F13;&#x51B2;</h4><ul>
+<li>&#x4E3B;&#x9876;&#x70B9;&#x7F13;&#x51B2;&#xFF0C;&#x5305;&#x542B;&#x6240;&#x6709;&#x9876;&#x70B9;&#x4FE1;&#x606F;</li>
+</ul>
+<p></p><figure class="highlight cpp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">   InitShader();</span><br><span class="line"></span><br><span class="line">   glGenVertexArrays(<span class="hljs-number">1</span>, &amp;vao);	<span class="hljs-comment">//Vertex Array Buffer</span></span><br><span class="line">   glBindVertexArray(vao);</span><br><span class="line"></span><br><span class="line">   GLuint vbo;</span><br><span class="line">   glGenBuffers(<span class="hljs-number">1</span>, &amp;vbo);	<span class="hljs-comment">//Vertex Buffer Object</span></span><br><span class="line">   glBindBuffer(GL_ARRAY_BUFFER, vbo);</span><br><span class="line"><span class="hljs-comment">//Total size : Face Number * 3 * sizeof(Per Vertex) </span></span><br><span class="line">   glBufferData(GL_ARRAY_BUFFER, <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">float</span>) * numFaces * <span class="hljs-number">3</span> * <span class="hljs-number">7</span>, sortedVertices, GL_STATIC_DRAW); </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//Set Per Vertex Data Format</span></span><br><span class="line">   glVertexAttribPointer(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>, GL_FLOAT, GL_FALSE, <span class="hljs-number">7</span> * <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">float</span>), (<span class="hljs-keyword">void</span>*)<span class="hljs-number">0</span>);					<span class="hljs-comment">//position</span></span><br><span class="line">   glVertexAttribPointer(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, GL_FLOAT, GL_FALSE, <span class="hljs-number">7</span> * <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">float</span>), (<span class="hljs-keyword">void</span>*)(<span class="hljs-number">3</span> * <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">float</span>)));	<span class="hljs-comment">//normal</span></span><br><span class="line">   glVertexAttribPointer(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, GL_FLOAT, GL_FALSE, <span class="hljs-number">7</span> * <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">float</span>), (<span class="hljs-keyword">void</span>*)(<span class="hljs-number">6</span> * <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">float</span>)));	<span class="hljs-comment">//FaceIndex</span></span><br><span class="line"></span><br><span class="line">   glEnableVertexAttribArray(<span class="hljs-number">0</span>);</span><br><span class="line">   glEnableVertexAttribArray(<span class="hljs-number">1</span>);</span><br><span class="line">   glEnableVertexAttribArray(<span class="hljs-number">2</span>);</span><br></pre></td></tr></tbody></table></figure><p></p>
+<ul>
+<li>&#x9AD8;&#x4EAE;&#x4E09;&#x89D2;&#x7F13;&#x51B2;&#xFF0C;&#x4EC5;&#x4E09;&#x4E2A;&#x70B9;&#xFF0C;&#x4F7F;&#x7528;<strong>Dynamic Draw</strong>&#x58F0;&#x660E;&#x8BE5;&#x6570;&#x636E;&#x4F1A;&#x5B9E;&#x65F6;&#x53D8;&#x5316;&#xFF0C;&#x4EE4;GPU&#x5BF9;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x8FDB;&#x884C;&#x4F18;&#x5316;</li>
+</ul>
+<p></p><figure class="highlight cpp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">glGenVertexArrays(<span class="hljs-number">1</span>, &amp;CoveredVAO);</span><br><span class="line">   glBindVertexArray(CoveredVAO);</span><br><span class="line"></span><br><span class="line">   glGenBuffers(<span class="hljs-number">1</span>, &amp;CoveredVBO);</span><br><span class="line">   glBindBuffer(GL_ARRAY_BUFFER, CoveredVBO);</span><br><span class="line">   glBufferData(GL_ARRAY_BUFFER, <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">float</span>) * <span class="hljs-number">9</span>, <span class="hljs-literal">nullptr</span>, GL_DYNAMIC_DRAW);	<span class="hljs-comment">// A hint for GPU to optimize VBO</span></span><br><span class="line"></span><br><span class="line">   glVertexAttribPointer(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>, GL_FLOAT, GL_FALSE, <span class="hljs-number">3</span> * <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">float</span>), (<span class="hljs-keyword">void</span>*)<span class="hljs-number">0</span>);</span><br><span class="line">   glEnableVertexAttribArray(<span class="hljs-number">0</span>);</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="&#x521D;&#x59CB;&#x5316;FrameBuffers"><a href="#&#x521D;&#x59CB;&#x5316;FrameBuffers" class="headerlink" title="&#x521D;&#x59CB;&#x5316;FrameBuffers"></a>&#x521D;&#x59CB;&#x5316;FrameBuffers</h4><ul>
+<li>&#x4E00;&#x4E2A;FrameBuffer&#x8868;&#x793A;&#x4E00;&#x7EC4;Render Target&#xFF08;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x7ED8;&#x5236;&#x5230;&#x7684;&#x4E00;&#x5F20;&#x7A97;&#x53E3;&#x5927;&#x5C0F;&#x7684;&#x56FE;&#x7247;&#xFF09;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x5305;&#x542B;&#x82E5;&#x5E72;color attachment&#x4EE5;&#x53CA;&#x4E00;&#x4E2A;depth-stencil attachment&#xFF0C;&#x672C;&#x4F8B;&#x4E2D;&#x4E3A;&#x4E86;&#x7ED8;&#x5236;FaceIndex&#x4F7F;&#x7528;&#x4E00;&#x4E2A;R32F&#x7684;&#x7EB9;&#x7406;&#x4F5C;&#x4E3A;RT&#x7ED1;&#x5B9A;&#x3002;</li>
+</ul>
+<p></p><figure class="highlight cpp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">glGenFramebuffers(<span class="hljs-number">1</span>, &amp;FaceIndexFBO);							<span class="hljs-comment">// generate frame buffer</span></span><br><span class="line">glBindFramebuffer(GL_FRAMEBUFFER, FaceIndexFBO);				<span class="hljs-comment">// bind frame buffer</span></span><br><span class="line">glGenTextures(<span class="hljs-number">1</span>, &amp;FaceIndexTex);								<span class="hljs-comment">// generate the texture to storage FaceIndex</span></span><br><span class="line">glBindTexture(GL_TEXTURE_2D, FaceIndexTex);						<span class="hljs-comment">// bind texture</span></span><br><span class="line">glTexImage2D(GL_TEXTURE_2D, <span class="hljs-number">0</span>, GL_R32F, <span class="hljs-number">800</span>, <span class="hljs-number">600</span>, <span class="hljs-number">0</span>, GL_RED, GL_FLOAT, <span class="hljs-literal">NULL</span>);	<span class="hljs-comment">// Set texture Format to R32F</span></span><br><span class="line">glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, FaceIndexTex, <span class="hljs-number">0</span>);	<span class="hljs-comment">// Bind as Color Attachment 0 of the FrameBuffer</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="&#x4E3B;&#x7ED8;&#x5236;&#x6D41;&#x7A0B;"><a href="#&#x4E3B;&#x7ED8;&#x5236;&#x6D41;&#x7A0B;" class="headerlink" title="&#x4E3B;&#x7ED8;&#x5236;&#x6D41;&#x7A0B;"></a>&#x4E3B;&#x7ED8;&#x5236;&#x6D41;&#x7A0B;</h4><ul>
+<li>&#x5904;&#x7406;&#x9F20;&#x6807;&#x8F93;&#x5165;</li>
+</ul>
+<p></p><figure class="highlight cpp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Application::HandleMouse</span><span class="hljs-params">()</span> </span>{</span><br><span class="line">    glfwGetCursorPos(window, &amp;MouseX, &amp;MouseY);		<span class="hljs-comment">// Use GLFW API to get current Mouse Postion</span></span><br><span class="line">    <span class="hljs-keyword">auto</span> MouseDelta = glm::vec2(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);				<span class="hljs-comment">// Delta Vector between last and current</span></span><br><span class="line">    <span class="hljs-keyword">if</span> (LastMouseX &gt;= <span class="hljs-number">0</span> &amp;&amp; LastMouseY &gt;= <span class="hljs-number">0</span>) {		<span class="hljs-comment">// if last pos is legal (in the window)</span></span><br><span class="line">        MouseDelta = glm::vec2(MouseX - LastMouseX, MouseY - LastMouseY);</span><br><span class="line">    }</span><br><span class="line">    <span class="hljs-keyword">auto</span> state = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT);	<span class="hljs-comment">// Get current left button state</span></span><br><span class="line">    <span class="hljs-keyword">if</span> (state == GLFW_PRESS) {	<span class="hljs-comment">// if left buttton is pressed</span></span><br><span class="line">        <span class="hljs-comment">// rotate viewDir around vertical axis (Up)</span></span><br><span class="line">        viewDir = glm::mat3(glm::rotate(MouseDelta.x * <span class="hljs-number">0.0015f</span>, viewUp)) * viewDir;</span><br><span class="line">        <span class="hljs-comment">// rotate viewDir around horizontal axis (ViewUp x ViewDir)</span></span><br><span class="line">        viewDir = glm::mat3(glm::rotate(-MouseDelta.y * <span class="hljs-number">0.003f</span>, glm::cross(viewUp, viewDir))) * viewDir;</span><br><span class="line"></span><br><span class="line">        LastMouseX = MouseX;</span><br><span class="line">        LastMouseY = MouseY;</span><br><span class="line">    }</span><br><span class="line">    <span class="hljs-keyword">else</span> {</span><br><span class="line">        LastMouseX = <span class="hljs-number">-1.0f</span>;</span><br><span class="line">        LastMouseX = <span class="hljs-number">-1.0f</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<ul>
+<li><p>&#x7ED8;&#x5236;&#x9876;&#x70B9;&#x7D22;&#x5F15;</p>
+<p></p><figure class="highlight cpp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Application::Render</span><span class="hljs-params">()</span> </span>{</span><br><span class="line">    HandleMouse();</span><br><span class="line">    glEnable(GL_CULL_FACE);	<span class="hljs-comment">// NOTICE : Must Enable Cull Face to ensure NOT rendering back face of the BUNNY !!!</span></span><br><span class="line">    glEnable(GL_DEPTH_TEST);</span><br><span class="line">    glBindVertexArray(vao);</span><br><span class="line">    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);</span><br><span class="line"></span><br><span class="line">    glm::mat4 projection = glm::perspective((<span class="hljs-keyword">float</span>)glm::radians(<span class="hljs-number">45.0</span>), <span class="hljs-number">800.0f</span> / <span class="hljs-number">600.0f</span>, <span class="hljs-number">0.1f</span>, <span class="hljs-number">100.0f</span>);</span><br><span class="line">    glm::mat4 model = glm::scale(glm::mat4(<span class="hljs-number">1.0f</span>), glm::vec3(<span class="hljs-number">5.0f</span>));</span><br><span class="line">    glm::mat4 view = glm::lookAt(viewPos, viewPos + viewDir, viewUp);</span><br><span class="line"></span><br><span class="line">    mShaders[<span class="hljs-string">&quot;FaceIndex&quot;</span>]-&gt;Bind();</span><br><span class="line">    <span class="hljs-comment">// set Uniforms</span></span><br><span class="line">    mShaders[<span class="hljs-string">&quot;FaceIndex&quot;</span>]-&gt;SetMat(<span class="hljs-string">&quot;projection&quot;</span>, projection);</span><br><span class="line">    mShaders[<span class="hljs-string">&quot;FaceIndex&quot;</span>]-&gt;SetMat(<span class="hljs-string">&quot;model&quot;</span>, model);</span><br><span class="line">    mShaders[<span class="hljs-string">&quot;FaceIndex&quot;</span>]-&gt;SetMat(<span class="hljs-string">&quot;view&quot;</span>, view);</span><br><span class="line"></span><br><span class="line">    glBindFramebuffer(GL_FRAMEBUFFER, FaceIndexFBO);</span><br><span class="line"></span><br><span class="line">    glDrawArrays(GL_TRIANGLES, <span class="hljs-number">0</span>, numFaces * <span class="hljs-number">3</span>);</span><br></pre></td></tr></tbody></table></figure><p></p>
+<ul>
+<li><p>&#x9876;&#x70B9;&#x7D22;&#x5F15; Shader &#x4EE3;&#x7801;</p>
+<p></p><figure class="highlight glsl hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//FaceIndex.vert</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#version 330 core</span></span><br><span class="line"><span class="hljs-keyword">layout</span>(<span class="hljs-keyword">location</span> = <span class="hljs-number">0</span>) <span class="hljs-keyword">in</span> <span class="hljs-type">vec3</span> in_position;</span><br><span class="line"><span class="hljs-keyword">layout</span>(<span class="hljs-keyword">location</span> = <span class="hljs-number">1</span>) <span class="hljs-keyword">in</span> <span class="hljs-type">vec3</span> in_normal;</span><br><span class="line"><span class="hljs-keyword">layout</span>(<span class="hljs-keyword">location</span> = <span class="hljs-number">2</span>) <span class="hljs-keyword">in</span> <span class="hljs-type">float</span> in_index;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">uniform</span> <span class="hljs-type">mat4</span> model;</span><br><span class="line"><span class="hljs-keyword">uniform</span> <span class="hljs-type">mat4</span> view;</span><br><span class="line"><span class="hljs-keyword">uniform</span> <span class="hljs-type">mat4</span> projection;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">out</span> <span class="hljs-type">vec3</span> thePosition;</span><br><span class="line"><span class="hljs-keyword">out</span> <span class="hljs-type">vec3</span> theNormal;</span><br><span class="line"><span class="hljs-keyword">flat</span> <span class="hljs-keyword">out</span> <span class="hljs-type">float</span> theIndex;	<span class="hljs-comment">// NOTICE: Index should NOT be interpolated</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-type">void</span> main() {</span><br><span class="line">    <span class="hljs-type">vec4</span> v = <span class="hljs-type">vec4</span>(in_position,<span class="hljs-number">1.0</span>);</span><br><span class="line">    <span class="hljs-built_in">gl_Position</span> = projection * view * model * v;</span><br><span class="line"></span><br><span class="line">    thePosition = <span class="hljs-type">vec3</span>(model * v);</span><br><span class="line">    theNormal = <span class="hljs-built_in">normalize</span>(<span class="hljs-type">vec3</span>(model * <span class="hljs-type">vec4</span>(in_normal,<span class="hljs-number">0</span>)));</span><br><span class="line">    theIndex = in_index;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p></p><figure class="highlight glsl hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//FaceIndex.frag</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#version 430</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">out</span> <span class="hljs-type">vec4</span> daColor;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">in</span> <span class="hljs-type">vec3</span> thePosition;</span><br><span class="line"><span class="hljs-keyword">in</span> <span class="hljs-type">vec3</span> theNormal;</span><br><span class="line"><span class="hljs-keyword">flat</span> <span class="hljs-keyword">in</span> <span class="hljs-type">float</span> theIndex;</span><br><span class="line"></span><br><span class="line"><span class="hljs-type">void</span> main()</span><br><span class="line">{</span><br><span class="line">    daColor = <span class="hljs-type">vec4</span>(theIndex,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+</li>
+</ul>
+</li>
+<li><p>&#x56DE;&#x8BFB;&#x9F20;&#x6807;&#x4F4D;&#x7F6E;&#x7684;&#x989C;&#x8272;(&#x7D22;&#x5F15;&#x503C;)</p>
+<p></p><figure class="highlight cpp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">float</span> res[<span class="hljs-number">4</span>];</span><br><span class="line">   GLint viewport[<span class="hljs-number">4</span>];</span><br><span class="line">   glGetIntegerv(GL_VIEWPORT, viewport);</span><br><span class="line">   </span><br><span class="line">   glReadPixels((GLint)MouseX, viewport[<span class="hljs-number">3</span>] - MouseY, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, GL_RED, GL_FLOAT, &amp;res);	</span><br><span class="line"><span class="hljs-comment">// y is flipped in OpenGL screen coordinate system</span></span><br><span class="line"><span class="hljs-comment">// res[0] is the face index picked by mouse</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+</li>
+</ul>
+<ul>
+<li><p>&#x7ED8;&#x5236;&#x51AF;&#x6C0F;&#x5149;&#x7167;&#x6A21;&#x578B;</p>
+<p></p><figure class="highlight cpp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mShaders[<span class="hljs-string">&quot;BlinnPhong&quot;</span>]-&gt;Bind();</span><br><span class="line">mShaders[<span class="hljs-string">&quot;BlinnPhong&quot;</span>]-&gt;SetMat(<span class="hljs-string">&quot;projection&quot;</span>, projection);</span><br><span class="line">mShaders[<span class="hljs-string">&quot;BlinnPhong&quot;</span>]-&gt;SetMat(<span class="hljs-string">&quot;model&quot;</span>, model);</span><br><span class="line">mShaders[<span class="hljs-string">&quot;BlinnPhong&quot;</span>]-&gt;SetMat(<span class="hljs-string">&quot;view&quot;</span>, view);</span><br><span class="line">  </span><br><span class="line">mShaders[<span class="hljs-string">&quot;BlinnPhong&quot;</span>]-&gt;SetVec(<span class="hljs-string">&quot;CameraPosition&quot;</span>, glm::vec3(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-20.0f</span>));</span><br><span class="line">mShaders[<span class="hljs-string">&quot;BlinnPhong&quot;</span>]-&gt;SetVec(<span class="hljs-string">&quot;LightPosition&quot;</span>, glm::vec3(<span class="hljs-number">-50.0f</span>, <span class="hljs-number">10.0f</span>, <span class="hljs-number">-20.0f</span>));</span><br><span class="line">glBindFramebuffer(GL_FRAMEBUFFER, <span class="hljs-number">0</span>);		<span class="hljs-comment">// Bind the default framebuffer (render to screen)</span></span><br><span class="line">glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);</span><br><span class="line">glDrawArrays(GL_TRIANGLES, <span class="hljs-number">0</span>, numFaces * <span class="hljs-number">3</span>);</span><br></pre></td></tr></tbody></table></figure><p></p>
+<ul>
+<li><p>&#x51AF;&#x6C0F;&#x5149;&#x7167;Shader</p>
+<p></p><figure class="highlight glsl hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//BlinnPhong.vert</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#version 330 core</span></span><br><span class="line"><span class="hljs-keyword">layout</span>(<span class="hljs-keyword">location</span> = <span class="hljs-number">0</span>) <span class="hljs-keyword">in</span> <span class="hljs-type">vec3</span> in_position;</span><br><span class="line"><span class="hljs-keyword">layout</span>(<span class="hljs-keyword">location</span> = <span class="hljs-number">1</span>) <span class="hljs-keyword">in</span> <span class="hljs-type">vec3</span> in_normal;</span><br><span class="line"><span class="hljs-keyword">layout</span>(<span class="hljs-keyword">location</span> = <span class="hljs-number">2</span>) <span class="hljs-keyword">in</span> <span class="hljs-type">float</span> in_index;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">uniform</span> <span class="hljs-type">mat4</span> model;</span><br><span class="line"><span class="hljs-keyword">uniform</span> <span class="hljs-type">mat4</span> view;</span><br><span class="line"><span class="hljs-keyword">uniform</span> <span class="hljs-type">mat4</span> projection;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">out</span> <span class="hljs-type">vec3</span> thePosition;</span><br><span class="line"><span class="hljs-keyword">out</span> <span class="hljs-type">vec3</span> theNormal;</span><br><span class="line"></span><br><span class="line"><span class="hljs-type">void</span> main() {</span><br><span class="line">    <span class="hljs-type">vec4</span> v = <span class="hljs-type">vec4</span>(in_position,<span class="hljs-number">1.0</span>);</span><br><span class="line">    <span class="hljs-built_in">gl_Position</span> = projection * view * model * v;</span><br><span class="line"></span><br><span class="line">    thePosition = <span class="hljs-type">vec3</span>(model * v);</span><br><span class="line">    theNormal = <span class="hljs-built_in">normalize</span>(<span class="hljs-type">vec3</span>(model * <span class="hljs-type">vec4</span>(in_normal,<span class="hljs-number">0</span>)));</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p></p><figure class="highlight glsl hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#version 430</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">out</span> <span class="hljs-type">vec4</span> daColor;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">in</span> <span class="hljs-type">vec3</span> thePosition;</span><br><span class="line"><span class="hljs-keyword">in</span> <span class="hljs-type">vec3</span> theNormal;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">uniform</span> <span class="hljs-type">vec3</span> CameraPosition;</span><br><span class="line"><span class="hljs-keyword">uniform</span> <span class="hljs-type">vec3</span> LightPosition;</span><br><span class="line"></span><br><span class="line"><span class="hljs-type">void</span> main()</span><br><span class="line">{</span><br><span class="line">	<span class="hljs-type">float</span> finalBrightness = <span class="hljs-number">0.0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-type">float</span> ambient = <span class="hljs-number">0.05</span>;</span><br><span class="line">    <span class="hljs-comment">//diiffuse</span></span><br><span class="line">    <span class="hljs-type">vec3</span> lightDir = <span class="hljs-built_in">normalize</span>(LightPosition - thePosition);</span><br><span class="line">    <span class="hljs-type">float</span> diff = <span class="hljs-built_in">max</span>(<span class="hljs-built_in">dot</span>(lightDir,theNormal),<span class="hljs-number">0.0</span>);</span><br><span class="line">        </span><br><span class="line">    <span class="hljs-comment">//specular</span></span><br><span class="line">    <span class="hljs-type">vec3</span> viewDir = <span class="hljs-built_in">normalize</span>(CameraPosition - thePosition);</span><br><span class="line">    <span class="hljs-type">vec3</span> reflectDir = <span class="hljs-built_in">reflect</span>(-lightDir,theNormal);</span><br><span class="line">    <span class="hljs-type">float</span> spec = <span class="hljs-number">0.0</span>;</span><br><span class="line">    <span class="hljs-type">vec3</span> halfwayDir = <span class="hljs-built_in">normalize</span>(lightDir + viewDir);</span><br><span class="line">    spec = <span class="hljs-built_in">pow</span>(<span class="hljs-built_in">max</span>(<span class="hljs-built_in">dot</span>(theNormal,halfwayDir),<span class="hljs-number">0.0</span>),<span class="hljs-number">32.0</span>);</span><br><span class="line">	<span class="hljs-type">float</span> specular = <span class="hljs-number">0.3</span> * spec;</span><br><span class="line">    finalBrightness = ambient + diff + specular;</span><br><span class="line">	</span><br><span class="line">	<span class="hljs-type">vec3</span> f = <span class="hljs-type">vec3</span>(finalBrightness);</span><br><span class="line">	<span class="hljs-type">vec3</span> test =  <span class="hljs-built_in">min</span>(f,<span class="hljs-type">vec3</span>(<span class="hljs-number">1.0</span>));</span><br><span class="line">	daColor = <span class="hljs-type">vec4</span>(test, <span class="hljs-number">1.0</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+</li>
+</ul>
+</li>
+<li><p>&#x7ED8;&#x5236;&#x9AD8;&#x4EAE;&#x4E09;&#x89D2;&#x5F62;</p>
+<ul>
+<li><p>&#x9AD8;&#x4EAE;&#x9762;&#x7684;&#x7F16;&#x53F7;&#x4E3A; res[0] * numFaces</p>
+<p></p><figure class="highlight cpp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DrawCoverVertices(res[<span class="hljs-number">0</span>] * numFaces, projection, model, view);</span><br></pre></td></tr></tbody></table></figure><p></p>
+</li>
+<li><p>&#x83B7;&#x53D6;&#x9AD8;&#x4EAE;&#x9762;&#x7684;&#x4E09;&#x4E2A;&#x70B9;&#x5750;&#x6807;</p>
+<p></p><figure class="highlight cpp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Application::DrawCoverVertices</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index, glm::mat4&amp; projection, glm::mat4&amp; model, glm::mat4&amp; view)</span></span></span><br><span class="line"><span class="hljs-function"></span>{</span><br><span class="line">    <span class="hljs-keyword">if</span> (index &lt; <span class="hljs-number">0</span> || index &gt;= numFaces) {</span><br><span class="line">        <span class="hljs-keyword">return</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="hljs-keyword">int</span> a = index * <span class="hljs-number">3</span> + <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">int</span> b = index * <span class="hljs-number">3</span> + <span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-keyword">int</span> c = index * <span class="hljs-number">3</span> + <span class="hljs-number">2</span>;</span><br><span class="line">    CoveredVertices[<span class="hljs-number">0</span>] = sortedVertices[a * <span class="hljs-number">7</span> + <span class="hljs-number">0</span>];</span><br><span class="line">    CoveredVertices[<span class="hljs-number">1</span>] = sortedVertices[a * <span class="hljs-number">7</span> + <span class="hljs-number">1</span>];</span><br><span class="line">    CoveredVertices[<span class="hljs-number">2</span>] = sortedVertices[a * <span class="hljs-number">7</span> + <span class="hljs-number">2</span>];</span><br><span class="line"></span><br><span class="line">    CoveredVertices[<span class="hljs-number">3</span>] = sortedVertices[b * <span class="hljs-number">7</span> + <span class="hljs-number">0</span>];</span><br><span class="line">    CoveredVertices[<span class="hljs-number">4</span>] = sortedVertices[b * <span class="hljs-number">7</span> + <span class="hljs-number">1</span>];</span><br><span class="line">    CoveredVertices[<span class="hljs-number">5</span>] = sortedVertices[b * <span class="hljs-number">7</span> + <span class="hljs-number">2</span>];</span><br><span class="line"></span><br><span class="line">    CoveredVertices[<span class="hljs-number">6</span>] = sortedVertices[c * <span class="hljs-number">7</span> + <span class="hljs-number">0</span>];</span><br><span class="line">    CoveredVertices[<span class="hljs-number">7</span>] = sortedVertices[c * <span class="hljs-number">7</span> + <span class="hljs-number">1</span>];</span><br><span class="line">    CoveredVertices[<span class="hljs-number">8</span>] = sortedVertices[c * <span class="hljs-number">7</span> + <span class="hljs-number">2</span>];</span><br></pre></td></tr></tbody></table></figure><p></p>
+</li>
+<li><p>&#x7ED8;&#x5236;&#x9AD8;&#x4EAE;&#x9762; (&#x5173;&#x95ED;depth test &#x4ECE;&#x800C;&#x4E0E;&#x4E4B;&#x524D;&#x7684;&#x6709;&#x5149;&#x7167;&#x7684;&#x5154;&#x5154;&#x53E0;&#x52A0;)</p>
+<p></p><figure class="highlight cpp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">glDisable(GL_DEPTH_TEST);	<span class="hljs-comment">// NOTICE: Disable depth test to cover last result</span></span><br><span class="line">glDisable(GL_CULL_FACE);</span><br><span class="line">glBindVertexArray(CoveredVAO);</span><br><span class="line">glBufferSubData(GL_ARRAY_BUFFER, <span class="hljs-number">0</span>, <span class="hljs-number">9</span> * <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">float</span>), CoveredVertices);</span><br><span class="line">    </span><br><span class="line">mShaders[<span class="hljs-string">&quot;postprocess&quot;</span>]-&gt;Bind();</span><br><span class="line">mShaders[<span class="hljs-string">&quot;postprocess&quot;</span>]-&gt;SetMat(<span class="hljs-string">&quot;projection&quot;</span>, projection);</span><br><span class="line">mShaders[<span class="hljs-string">&quot;postprocess&quot;</span>]-&gt;SetMat(<span class="hljs-string">&quot;model&quot;</span>, model);</span><br><span class="line">mShaders[<span class="hljs-string">&quot;postprocess&quot;</span>]-&gt;SetMat(<span class="hljs-string">&quot;view&quot;</span>, view);</span><br><span class="line">glBindVertexArray(CoveredVAO);</span><br><span class="line">glDrawArrays(GL_TRIANGLES, <span class="hljs-number">0</span>, <span class="hljs-number">9</span>);</span><br></pre></td></tr></tbody></table></figure><p></p>
+<ul>
+<li><p>&#x7ED8;&#x5236;&#x9AD8;&#x4EAE;&#x9762;Shader</p>
+<p></p><figure class="highlight glsl hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//postprocess.vert</span></span><br><span class="line"><span class="hljs-meta">#version 330 core</span></span><br><span class="line"><span class="hljs-keyword">layout</span>(<span class="hljs-keyword">location</span> = <span class="hljs-number">0</span>) <span class="hljs-keyword">in</span> <span class="hljs-type">vec3</span> in_position;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">uniform</span> <span class="hljs-type">mat4</span> model;</span><br><span class="line"><span class="hljs-keyword">uniform</span> <span class="hljs-type">mat4</span> view;</span><br><span class="line"><span class="hljs-keyword">uniform</span> <span class="hljs-type">mat4</span> projection;</span><br><span class="line"></span><br><span class="line"><span class="hljs-type">void</span> main() {</span><br><span class="line">    <span class="hljs-type">vec4</span> v = <span class="hljs-type">vec4</span>(in_position,<span class="hljs-number">1.0</span>);</span><br><span class="line">    <span class="hljs-built_in">gl_Position</span> = projection * view * model * v;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p></p><figure class="highlight glsl hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//postprocess.frag</span></span><br><span class="line"><span class="hljs-meta">#version 430</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">out</span> <span class="hljs-type">vec4</span> daColor;</span><br><span class="line"></span><br><span class="line"><span class="hljs-type">void</span> main()</span><br><span class="line">{</span><br><span class="line">    daColor = <span class="hljs-type">vec4</span>(<span class="hljs-number">1.0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1.0</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x52A0;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x5EF6;&#x8FDF;&#xFF0C;&#x9501;&#x5B9A;&#x5728;&#x4E09;&#x5341;&#x5E27;&#x5DE6;&#x53F3;&#xFF08;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7528;glfw&#x7684;&#x5782;&#x76F4;&#x540C;&#x6B65;&#xFF09;</p>
+</li>
+</ul>
+<p></p><figure class="highlight cpp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">    DrawCoverVertices(res[<span class="hljs-number">0</span>] * numFaces, projection, model, view);</span><br><span class="line">    Sleep(<span class="hljs-number">20</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<ul>
+<li>&#x9644;&#x4E0A;&#x4E00;&#x4E2A;Application&#x4E0E;Shader&#x7684;&#x58F0;&#x660E;</li>
+</ul>
+<p></p><figure class="highlight cpp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Application</span> {</span></span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Run</span><span class="hljs-params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">private</span>:</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">InitShader</span><span class="hljs-params">()</span></span>;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Init</span><span class="hljs-params">()</span></span>;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Render</span><span class="hljs-params">()</span></span>;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">HandleMouse</span><span class="hljs-params">()</span></span>;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">DrawCoverVertices</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index, glm::mat4&amp; projection, glm::mat4&amp; model, glm::mat4&amp; view)</span></span>;</span><br><span class="line"><span class="hljs-keyword">private</span>:</span><br><span class="line">	<span class="hljs-keyword">using</span> ShaderLibrary = <span class="hljs-built_in">std</span>::<span class="hljs-built_in">unordered_map</span>&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>,Shader*&gt;;</span><br><span class="line">	ShaderLibrary mShaders;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-keyword">float</span>* vertices;</span><br><span class="line">	<span class="hljs-keyword">float</span>* sortedVertices;</span><br><span class="line">	<span class="hljs-keyword">int</span> numFaces;</span><br><span class="line">	<span class="hljs-keyword">int</span> numVertices;</span><br><span class="line">	GLuint vao;</span><br><span class="line"></span><br><span class="line">	GLuint FaceIndexTex;</span><br><span class="line">	GLuint FaceIndexFBO;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-keyword">double</span> MouseX, MouseY;</span><br><span class="line">	<span class="hljs-keyword">double</span> LastMouseX, LastMouseY;</span><br><span class="line">	GLFWwindow* window;</span><br><span class="line"></span><br><span class="line">	<span class="hljs-keyword">float</span> CoveredVertices[<span class="hljs-number">9</span>];</span><br><span class="line">	GLuint CoveredVAO;</span><br><span class="line">	GLuint CoveredVBO;</span><br><span class="line"></span><br><span class="line">	glm::vec3 viewDir = glm::vec3(<span class="hljs-number">0.0f</span>, <span class="hljs-number">0.0f</span>, <span class="hljs-number">20.0f</span>);</span><br><span class="line">	glm::vec3 viewPos = glm::vec3(<span class="hljs-number">0.0f</span>, <span class="hljs-number">0.0f</span>, <span class="hljs-number">-3.0f</span>);</span><br><span class="line">	glm::vec3 viewUp = glm::vec3(<span class="hljs-number">0.0f</span>, <span class="hljs-number">1.0f</span>, <span class="hljs-number">0.0f</span>);</span><br><span class="line"></span><br><span class="line">	<span class="hljs-keyword">float</span> CoverVertices[<span class="hljs-number">9</span>];</span><br><span class="line">};</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p></p><figure class="highlight cpp hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Shader</span> {</span></span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">	Shader(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; shaderName);</span><br><span class="line"></span><br><span class="line">	<span class="hljs-function">GLuint <span class="hljs-title">GetProgramID</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-keyword">return</span> mProgramID; }</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">SetMat</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; name, <span class="hljs-keyword">const</span> glm::mat4&amp; mat)</span></span>;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">SetMat</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; name, <span class="hljs-keyword">const</span> glm::mat3&amp; mat)</span></span>;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">SetVec</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; name, <span class="hljs-keyword">const</span> glm::vec3&amp; vec)</span></span>;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">SetVec</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; name, <span class="hljs-keyword">const</span> glm::vec4&amp; vec)</span></span>;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">SetInt</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; name, <span class="hljs-keyword">int</span> val)</span></span>;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">SetFloat</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; name, <span class="hljs-keyword">float</span> val)</span></span>;</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Bind</span><span class="hljs-params">()</span></span>;</span><br><span class="line"><span class="hljs-keyword">private</span>:</span><br><span class="line">	GLuint mProgramID;</span><br><span class="line">};</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id><a href="#" class="headerlink" title></a></h4><h4 id="&#x5B9E;&#x73B0;&#x6548;&#x679C;"><a href="#&#x5B9E;&#x73B0;&#x6548;&#x679C;" class="headerlink" title="&#x5B9E;&#x73B0;&#x6548;&#x679C;"></a>&#x5B9E;&#x73B0;&#x6548;&#x679C;</h4><p><img src="C:%5CUsers%5Cpeter%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20201223022259881.png" alt="image-20201223022259881"></p>
+<p><img src="C:%5CUsers%5Cpeter%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20201223022325626.png" alt="image-20201223022325626"></p>
+<h4 id="&#x788E;&#x788E;&#x5FF5;"><a href="#&#x788E;&#x788E;&#x5FF5;" class="headerlink" title="&#x788E;&#x788E;&#x5FF5;"></a>&#x788E;&#x788E;&#x5FF5;</h4><p>&#x4E3B;&#x8981;&#x96BE;&#x70B9;&#x7684;&#x5730;&#x65B9;&#x8FD8;&#x662F;&#x5B9E;&#x73B0;&#x62FE;&#x53D6;&#xFF0C;&#x8FD9;&#x91CC;&#x7528;&#x4E86;&#x4E09;&#x4E2A;drawcall&#x663E;&#x7136;&#x5E94;&#x8BE5;&#x662F;&#x591A;&#x4F59;&#x7684;&#xFF0C;&#x53EF;&#x4F18;&#x5316;&#x7684;&#x5730;&#x65B9;&#x8FD8;&#x5F88;&#x591A;</p>
+<p>&#x7ED9;&#x522B;&#x4EBA;&#x8BB2;&#x56FE;&#x5F62;&#x5B66;&#x662F;&#x771F;&#x7684;&#x975E;&#x5E38;&#x96BE;&#xFF0C;&#x6982;&#x5FF5;&#x5197;&#x6742;&#x4E0D;&#x8BF4;&#xFF0C;&#x8FD8;&#x4E00;&#x73AF;&#x5957;&#x4E00;&#x73AF;&#xFF0C;&#x5FC5;&#x987B;&#x5168;&#x90E8;&#x641E;&#x61C2;&#x624D;&#x80FD;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x7684;&#x4E1C;&#x897F;</p>
+</body></html>
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/OpenGL/">#OpenGL</a></span>
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/CG/">#CG</a></span>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
+            
+            <a href="/2021/02/09/Nothing-2021-2-9/">Nothing-2021-2-9</a>
+            
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/2020/09/22/Nothing-2020-9-22/">Nothing-2020-9-22</a>
+            
+        </span>
+    </div>
+    
+</article>
+
+
+
+
+<div class="comments">
+    <h3 class="title is-4">评论</h3>
+    
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2020/12/22/dev-OpenGL-1/';
+        this.page.identifier = '2020/12/22/dev-OpenGL-1/';
+        
+        this.language = 'zh';
+        
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'peter' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+</div>
+</div>
+
+    </div>
+</section>
+    <footer class="footer">
+    <div class="container">
+        <div class="columns content">
+            <div class="column is-narrow has-text-centered">
+                &copy; 2021 Jerome&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+            </div>
+            <div class="column is-hidden-mobile"></div>
+
+            
+            <div class="column is-narrow">
+                <div class="columns is-mobile is-multiline is-centered">
+                
+                    
+                <a class="column is-narrow has-text-black" title="GitHub" href="https://github.com/peter-819" target="_blank" rel="noopener">
+                    
+                    GitHub
+                    
+                </a>
+                
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+
+<!-- test if the browser is outdated -->
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" target="_blank" rel="noopener">Update my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // plugin function, place inside DOM ready function
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        })
+    });
+</script>
+
+<script>
+    window.FontAwesomeConfig = {
+        searchPseudoElements: true
+    }
+    moment.locale("zh-CN");
+</script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script>
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+</script>
+
+    
+    
+    
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/js/lightgallery-all.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/js/jquery.justifiedGallery.min.js"></script>
+<script>
+    (function ($) {
+        $(document).ready(function () {
+            if (typeof($.fn.lightGallery) === 'function') {
+                $('.article.gallery').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof($.fn.justifiedGallery) === 'function') {
+                $('.justified-gallery').justifiedGallery();
+            }
+        });
+    })(jQuery);
+</script>
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <style>
+        .hljs {
+            position: relative;
+        }
+
+        .hljs .clipboard-btn {
+            float: right;
+            color: #9a9a9a;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hljs .clipboard-btn:hover {
+          color: #8a8a8a;
+        }
+
+        .hljs > .clipboard-btn {
+            display: none;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+        }
+
+        .hljs:hover > .clipboard-btn {
+            display: inline;
+        }
+
+        .hljs > figcaption > .clipboard-btn {
+            margin-right: 4px;
+        }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $('figure.hljs').each(function(i, figure) {
+          var codeId = 'code-' + i;
+          var code = figure.querySelector('.code');
+          var copyButton = $('<button>Copy <i class="far fa-clipboard"></i></button>');
+          code.id = codeId;
+          copyButton.addClass('clipboard-btn');
+          copyButton.attr('data-clipboard-target-id', codeId);
+
+          var figcaption = figure.querySelector('figcaption');
+
+          if (figcaption) {
+            figcaption.append(copyButton[0]);
+          } else {
+            figure.prepend(copyButton[0]);
+          }
+        })
+
+        var clipboard = new ClipboardJS('.clipboard-btn', {
+          target: function(trigger) {
+            return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+          }
+        });
+        clipboard.on('success', function(e) {
+          e.clearSelection();
+        })
+      })
+    </script>
+
+    
+    
+
+    
+
+
+
+<script src="/js/script.js"></script>
+
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-mask"></div>
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="站内搜索" />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+    
+</body>
+</html>
